@@ -785,3 +785,249 @@ Explain how inductive definitions and proofs help ensure the correctness of data
 	Qed.
 
 Inductive proofs ensure that each possible configuration of the stack is verified to maintain correctness, allowing us to define properties like ordering within the data structure.
+
+
+## Midterm
+
+[[cvs_midterm_model.pdf]]
+
+### Solutions:
+
+	From Coq Require Import Nat.
+	From Coq Require Import Lia.
+	
+	Inductive tree : Type :=
+	| Leaf
+	| Node (l: tree) (v: nat) (r: tree).
+	
+	Inductive ExistsT : (nat -> Prop) -> tree -> Prop :=
+	| ExistsTVal : forall P l v r,
+	    P v ->
+	    ExistsT P (Node l v r)
+	| ExistsTLeft : forall P l v r,
+	    ExistsT P l ->
+	    ExistsT P (Node l v r)
+	| ExistsTRight : forall P l v r,
+	    ExistsT P r ->
+	    ExistsT P (Node l v r).
+	
+	Inductive ForallT : (nat -> Prop) -> tree -> Prop :=
+	| ForallTLeaf : forall P,
+	    ForallT P Leaf
+	| ForallTNode : forall P l v r,
+	    ForallT P l ->
+	    ForallT P r ->
+	    P v ->
+	    ForallT P (Node l v r).
+	
+	Inductive BST : tree -> Prop :=
+	| BST_Leaf :
+	    BST Leaf
+	| BST_Node : forall l v r,
+	    BST l ->
+	    BST r ->
+	    ForallT (fun y => y < v) l ->
+	    ForallT (fun y => y > v) r ->
+	    BST (Node l v r).
+	
+	Fixpoint mem (x: nat) (t: tree) : bool :=
+	  match t with
+	  | Leaf => false
+	  | Node l y r =>
+	      if x <? y then mem x l
+	      else if y <? x then mem x r
+	           else true
+	  end.
+	
+	Lemma mem_ExistsT : forall (v: nat) (t : tree),
+	    BST t -> mem v t = true -> ExistsT (fun e => e = v) t.
+	
+	(*
+	  Proof by structural induction on t.
+	
+	  - Case [t = Leaf]:
+	
+	      In this case we have the following hypotheses:
+	        BST Leaf (H1)
+	        mem v Leaf = true (H2)
+	
+	      (H2) is clearly a contradiction, which finishes the case.
+	
+	  - Case [t = Node l x r]:
+	      Induction hypotheses:
+	        BST l -> mem v l = true -> Existst (fun e => e = v) l (IH1)
+	        BST r -> mem v r = true -> Existst (fun e => e = v) r (IH2)
+	
+	      In this case we have hypotheses:
+	        BST (Node l x r) (H1)
+	        mem v (Node l x r) = true (H2)
+	
+	      * Sub-case [v < x]:
+	
+	          In this sub-case we have:
+	            mem v l = true (H3)
+	
+	          To remember, we want to prove:
+	            Existst (fun e => e = v) (Node l v r)
+	
+	          By applying rule (ExiststLeft) on the goal, now we need to prove:
+	            ExistsT P l
+	
+	          By applying (IH1), we now need to prove:
+	            BST l (G1)
+	            mem v r = true (G2)
+	
+	          (G2) is exactly hypothesis (H3)
+	
+	          By inversion on (H1) we get:
+	            BST l (H4)
+	            BST r (H5)
+	            ForallT (fun y => y < v) l (H6)
+	            ForallT (fun y => y > v) r (H7)
+	
+	          (G1) is exactly hypothesis (H4), which concludes the case.
+	
+	      * Sub-case [v > x]:
+	
+	          Similar to the previous one, but we apply rule (ExistsRight) and
+	          (IH2) instead.
+	
+	     * Sub-case [x = v]:
+	
+	          To remember, we want to prove:
+	            ExistsT (fun e => e = v) (Node l v r)
+	
+	          By applying rule (ExistTVal) on the goal, now we need to prove:
+	            (fun e => e = v) v
+	
+	          By simplification:
+	            (fun e => e = v) v
+	        ==> v = v
+	
+	          Which is trivial and it concludes the case.
+	*)
+
+
+QUEUE:
+
+	class Queue<T>
+	{
+	    var data: array<T>
+	    var first: int
+	    var size: int
+	    
+	    ghost var logicalView: seq<T>
+	    ghost var Repr: set<object>
+	
+	    ghost predicate Valid ()
+	        reads this, Repr
+	    {
+	        this in Repr &&
+	        data in Repr &&
+	        0 <= first < data.Length &&
+	        0 <= size <= data.Length &&
+	        size == |logicalView| &&
+	        forall i :: 0 <= i < size ==>
+	            if first + i < data.Length then logicalView[i] == data[first + i]
+	            else logicalView[i] == data[(first + i) - data.Length]
+	    }
+	
+	    ghost predicate isEmpty ()
+	        reads this, Repr
+	    {
+	        Valid() && size == 0
+	    }
+	
+	    ghost predicate notFull ()
+	        reads this, Repr
+	    {
+	        Valid() && size < data.Length
+	    }
+	
+	    ghost predicate notEmpty ()
+	        reads this, Repr
+	    {
+	        Valid() && size > 0
+	    }
+	
+	    constructor (N: int, default: T)
+	        requires 0 < N
+	        ensures isEmpty()
+	        ensures fresh(Repr-{this})
+	        ensures logicalView == []
+	    {
+	        data := new T[N](_ => default);
+	        first, size := 0, 0;
+	        logicalView := [];
+	        Repr := {this, data};
+	    }
+	
+	    method pop () returns (r: T)
+	        requires notEmpty()
+	        modifies Repr
+	        ensures notFull()
+	        ensures old(logicalView) == [r] + logicalView
+	        ensures fresh(Repr-old(Repr))
+	    {
+	        r := data[first];
+	        size := size - 1;
+	        first := (first + 1)%data.Length;
+	        
+	        logicalView := logicalView[1 ..];
+	    }
+	
+	    method push (x: T)
+	        requires notFull()
+	        modifies Repr
+	        ensures notEmpty()
+	        ensures logicalView == old(logicalView) + [x]
+	        ensures fresh(Repr-old(Repr))
+	    {
+	        data[(first + size)%data.Length] := x;
+	        size := size + 1;
+	
+	        logicalView := logicalView + [x];
+	    }
+	
+	    method clear ()
+	        requires Valid()
+	        modifies Repr
+	        ensures isEmpty()
+	        ensures logicalView == []
+	    {
+	        while (size > 0)
+	            invariant Valid()
+	            invariant fresh(Repr-old(Repr))
+	            modifies Repr
+	        {
+	            var _ := pop();
+	        }
+	    }
+	}
+
+
+SUM:
+
+	function sum (a: array<int>, i: int, j:int) : int
+	    requires 0 <= i <= j <= a.Length
+	    reads a
+	{
+	    if j <= i then 0 else a[j-1] + sum(a, i, j-1)
+	}
+	
+	method querySum (a: array<int>, i: int, j: int) returns (s: int)
+	    requires 0 <= i <= j <= a.Length
+	    ensures s == sum(a, i, j)
+	{
+	    s := 0;
+	    var k := i;
+	
+	    while (k < j)
+	        decreases j - k
+	        invariant i <= k <= j
+	        invariant s == sum(a, i, k)
+	    {
+	        s := s + a[k];
+	        k := k + 1;
+	    }
+	}
