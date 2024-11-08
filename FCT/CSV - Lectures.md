@@ -1,3 +1,5 @@
+[[CSV - Lecture Notes]]
+
 Lecture 1 
 	-> Soft. Foundations V1, Chap.1
 	-> Vids
