@@ -287,7 +287,8 @@
 
 
 
-## Lecture - 8: #### 1. **Hoare Logic and Frame Rule**
+## Lecture - 8: 
+#### 1. **Hoare Logic and Frame Rule**
 
 - **Derived Frame Rule**:
     - Captures the concept of limiting proofs to only those state elements modified by an operation.
