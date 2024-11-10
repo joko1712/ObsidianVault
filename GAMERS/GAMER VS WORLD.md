@@ -1,8 +1,8 @@
 Ordem:
-fall guys-17
+fall guys-18
 multiversus-4
 hearstone-2
-geoguessr-4
+geoguessr-5
 rocket league
 overwatch
 deadlock
