@@ -1,12 +1,11 @@
 Ordem:
 fall guys-19
 multiversus-4
-hearstone-2
 geoguessr-8
 rocket league-2
+hearstone-2 -chess
 overwatch
 deadlock
 cs
 dota
 fortnite
-
