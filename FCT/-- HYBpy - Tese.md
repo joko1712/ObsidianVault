@@ -15,3 +15,4 @@
 - [ ] Limit 2 trains per user
 - [ ] Fix issue where batch mode on Historical
 - [ ] Add files to run local
+- [ ] Write Article
