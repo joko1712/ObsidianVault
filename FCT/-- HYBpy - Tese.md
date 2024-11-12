@@ -1,7 +1,7 @@
 # TASKS:
 
 ## Functional:
-- [ ] Add Template csv and .hmod to the button ###Should be done now
+- [x] Add Template csv and .hmod to the button ###Should be done now
 - [ ] Fix issue when using the examples to appear name of files instead of template(n) #
 - [x] Fix issue where batch mode on Historical
 - [ ] Put footer bot on: Results and Historical pages 
