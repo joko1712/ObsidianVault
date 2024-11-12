@@ -10,6 +10,7 @@
 - [x] Add link to SBML2HYB to Guide
 - [ ] Limit 2 trains per user
 - [ ] Add cloud functions for trainning
+- [ ] Add Topbar to the logjn and register
 
 ## Aesthetics:
 - [x] Show where you are on burger menu # Should be done
@@ -18,6 +19,12 @@
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
 - [ ] Add cycle graph to Historical
+- [ ] Alter Home:
+      "please feel free to contact us contact us at:" to "please feel free to [contact us](email do Jose ou o meu)" 
+- [ ] On guide alter Step 6: "Verify and Modify Mlm Settings" to "Verify and Modify ML Settings" and "After adding the ML component"
+- [ ] On the Help make the images from SBML2HYB smaller
+- [ ] Help alter the download SBML2HYB to: SBML2HYB tool](windows) or  (macOS)
+- [ ] Change hmod to HMOD
 
 ## Writting:
 - [ ] Write Article
