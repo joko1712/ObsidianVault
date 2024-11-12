@@ -1,11 +1,11 @@
 # TASKS:
 
 ## Functional:
-- [x] Add Template csv and .hmod to the button ###Should be done now
+- [x] Add Template csv and .hmod to the button
 - [x] Add link to SBML2HYB to Guide
 - [x] Fix issue where batch mode on Historical
+- [x] Add Topbar to the logjn and register 
 - [ ] Fix issue when using the examples to appear name of files instead of template(n) #
-- [ ] Add Topbar to the logjn and register # Should be done -------------
 - [ ] Put footer bot on: Results and Historical pages 
 - [ ] In Simulations remove batches (review simulation) 
 - [ ] Add stopper to training
