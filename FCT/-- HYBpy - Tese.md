@@ -4,15 +4,15 @@
 - [ ] Put footer bot on: Results and Historical pages 
 - [ ] Fix issue when using the examples to appear name of files instead of template(n) #
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
-- [ ] Show where you are on burger menu
+- [ ] Show where you are on burger menu # TRY ON THE LANDING PAGE TO SEE IF IS WORKING
 - [ ] Add Tab to Results
-- [ ] In Simulations remove batches (review simulation)
+- [ ] In Simulations remove batches (review simulation) 
 - [ ] Add stopper to training
-- [ ] Make Nova .png smaller
-- [ ] Remove empty columns on csv examples
+- [x] Make Nova .png smaller
+- [x] Remove empty columns on csv examples
 - [ ] Add cycle graph to Historical
-- [ ] Add link to SBML2HYB to Guide
+- [x] Add link to SBML2HYB to Guide
 - [ ] Limit 2 trains per user
-- [ ] Fix issue where batch mode on Historical
+- [ ] Fix issue where batch mode on Historical #
 - [ ] Add files to run local
 - [ ] Write Article
