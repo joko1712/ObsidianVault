@@ -13,7 +13,7 @@
 
 ## Aesthetics:
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
-- [ ] Show where you are on burger menu # Replecate on other pages
+- [ ] Show where you are on burger menu # Should be done
 - [ ] Add Tab to Results
 - [x] Make Nova .png smaller
 - [x] Remove empty columns on csv examples
