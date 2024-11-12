@@ -2,8 +2,8 @@
 
 - [ ] Add Template csv and .hmod to the button #
 - [ ] Put footer bot on: Results and Historical pages 
-- [ ] Fix issue when using the examples to appear name of files instead of template(n)
-- [ ] Fix issue when showing graphs if only 1 graph don't show cycle
+- [ ] Fix issue when using the examples to appear name of files instead of template(n) #
+- [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Show where you are on burger menu
 - [ ] Add Tab to Results
 - [ ] In Simulations remove batches (review simulation)
