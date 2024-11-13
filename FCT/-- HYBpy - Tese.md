@@ -16,6 +16,7 @@
 - [ ] Add EndedAt
 - [ ] Trained Hmod
 - [ ] Review Trained Hmod creation
+- [ ] In Simulation only test batch or only initial line of batch and control variables over time
 
 ## Aesthetics:
 - [x] Show where you are on burger menu # Should be done
