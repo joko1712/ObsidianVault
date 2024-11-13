@@ -29,6 +29,7 @@
 - [x] Help alter the download SBML2HYB to: SBML2HYB tool](windows) or  (macOS) # DONE?
 - [x] Change hmod to HMOD # DONE?
 - [ ] Add line on each title#
+- [ ] If batch_number is last column cut it
 ## Writting:
 - [ ] Write Article
 
