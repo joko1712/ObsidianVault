@@ -6,7 +6,7 @@
 - [x] Fix issue where batch mode on Historical
 - [x] Add Topbar to the logjn and register 
 - [x] Fix issue when using the examples to appear name of files instead of template(n) #
-- [ ] Put footer bot on: Results and Historical pages 
+- [x] Put footer bot on: Results and Historical pages 
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
 	_HYBpy is designed to simplify the construction and analyses hybrid models of [bioprocesses](__[https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001](https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001)__) and [biological systems](__[https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014](https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014)__)._
