@@ -336,4 +336,10 @@
 
 
 
+## Lecture - 9:
+
+
+## Lecture - 10:
+
+Write Logic in 'Verifast'.
 
