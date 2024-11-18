@@ -1,9 +1,9 @@
 Ordem:
-fall guys-45
+fall guys-48
 multiversus-10
 geoguessr-13
 rocket league-11
-hearstone-3 -chess
+hearstone-4 -chess
 overwatch-
 deadlock-
 cs-
