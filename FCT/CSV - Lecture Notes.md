@@ -345,3 +345,9 @@ Write Logic in 'Verifast'.
 
 Slide 12-31 - In place List reversal - Nice because we don't allocate more memory and it proves that our logic is good enough for List replacement with out copying the List itself 
 
+L->V * L->V --> this is not possible. This is False. we are replicating memory
+
+Slide 40 - isList(f, L2) * LSeg(f, q, L1) - isList and isSeg is defined on Slide 41
+
+//@ in 'Verifast' is ghost code. Usually used to define initial state of variables
+
