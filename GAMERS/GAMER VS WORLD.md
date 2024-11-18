@@ -1,8 +1,8 @@
 Ordem:
 fall guys-45
-multiversus-9
-geoguessr-12
-rocket league-10
+multiversus-10
+geoguessr-13
+rocket league-11
 hearstone-3 -chess
 overwatch-
 deadlock-
