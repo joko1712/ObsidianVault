@@ -343,3 +343,5 @@
 
 Write Logic in 'Verifast'.
 
+Slide 12-31 - In place List reversal - Nice because we don't allocate more memory and it proves that our logic is good enough for List replacement with out copying the List itself 
+
