@@ -7,6 +7,7 @@
 - [x] Add Topbar to the logjn and register 
 - [x] Fix issue when using the examples to appear name of files instead of template(n) #
 - [x] Put footer bot on: Results and Historical pages 
+- [ ] Alter Get CSV template
 - [ ] Add description
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
