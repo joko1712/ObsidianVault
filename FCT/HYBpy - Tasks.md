@@ -11,7 +11,7 @@
 - [ ] Update PrintScreen on HELP
 - [ ] Alter plot from Species to specie
 - [ ] Remove Time Series Prediction from historical 
-- [ ] Add print of hmod with explanation using arrows - NOT PRIORITY
+- [ ] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
 - [ ] Alter Get CSV template
 - [ ] Add description to hybpy link google = *Add **_What is HYBpy?_**
 - [ ] Add cloud functions for trainning
