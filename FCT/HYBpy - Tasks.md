@@ -9,9 +9,11 @@
 - [x] Put footer bot on: Results and Historical pages 
 - [ ] Add readme to ModelsandData
 - [ ] Update PrintScreen on HELP
+- [ ] Alter plot from Species to specie
+- [ ] Remove Time Series Prediction from historical 
 - [ ] Add print of hmod with explanation using arrows - NOT PRIORITY
 - [ ] Alter Get CSV template
-- [ ] Add description = *Add **_What is HYBpy?_**
+- [ ] Add description to hybpy link google = *Add **_What is HYBpy?_**
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
 	_HYBpy is designed to simplify the construction and analyses hybrid models of [bioprocesses](__[https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001](https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001)__) and [biological systems](__[https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014](https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014)__)._
