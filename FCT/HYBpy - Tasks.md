@@ -7,14 +7,17 @@
 - [x] Add Topbar to the logjn and register 
 - [x] Fix issue when using the examples to appear name of files instead of template(n) #
 - [x] Put footer bot on: Results and Historical pages 
+- [ ] Add readme to ModelsandData
+- [ ] Update PrintScreen on HELP
+- [ ] Add print of hmod with explanation using arrows - NOT PRIORITY
 - [ ] Alter Get CSV template
-- [ ] Add description
+- [ ] Add description = *Add **_What is HYBpy?_**
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
 	_HYBpy is designed to simplify the construction and analyses hybrid models of [bioprocesses](__[https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001](https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001)__) and [biological systems](__[https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014](https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014)__)._
 	You can also install HYBpy on Windows to run locally. Please visit the [GitHub respository](__[https://github.com/joko1712/HYBpy](https://github.com/joko1712/HYBpy)__) page.
 - [ ] Add table for historical
-- [ ] Add EndedAt # MIGHT BE DONE
+- [x] Add EndedAt # MIGHT BE DONE
 - [ ] Trained Hmod
 - [ ] Review Trained Hmod creation
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
