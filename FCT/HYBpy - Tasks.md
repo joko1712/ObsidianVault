@@ -24,7 +24,7 @@
 - [ ] Trained Hmod
 - [ ] Review Trained Hmod creation
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
-- [ ] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
+	- [ ] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
 - [ ] In “New projetct”  **Step 3: Load HMO**, the button should be “Get HMOD Template”
 - [ ] Tendo em conta que no documento da tese o link para o HYBpy está errado ([www.hybpy.org](http://www.hybpy.org)) inclua no link [https://github.com/joko1712/HYBpy_ModelsandData](https://github.com/joko1712/HYBpy_ModelsandData) que tb aparece na tese um readme com informações sobre o que está contido nas pastas, um titulo e ainda o link correto para a plataforma [www.hybpy.org](http://www.hybpy.org).
 
