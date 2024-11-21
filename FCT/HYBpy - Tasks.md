@@ -13,7 +13,7 @@
 - [x] Alter Get CSV template
 - [x] Add description to hybpy link google = *Add **_What is HYBpy?_**
 - [x] Add EndedAt # MIGHT BE DONE
-- [ ] Update PrintScreen on HELP
+- [x] Update PrintScreen on HELP
 - [ ] Contact Us
 - [ ] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
 - [ ] Add cloud functions for trainning
