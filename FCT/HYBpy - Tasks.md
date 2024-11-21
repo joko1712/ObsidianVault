@@ -18,12 +18,12 @@
 - [x] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
 - [x] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_ _HYBpy is designed to simplify the construction and analyses hybrid models of [bioprocesses](__[https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001](https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001)__) and [biological systems](__[https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014](https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014)__)._ You can also install HYBpy on Windows to run locally. Please visit the [GitHub respository](__[https://github.com/joko1712/HYBpy](https://github.com/joko1712/HYBpy)__) page.
 - [x] Tendo em conta que no documento da tese o link para o HYBpy está errado ([www.hybpy.org](http://www.hybpy.org)) inclua no link [https://github.com/joko1712/HYBpy_ModelsandData](https://github.com/joko1712/HYBpy_ModelsandData) que tb aparece na tese um readme com informações sobre o que está contido nas pastas, um titulo e ainda o link correto para a plataforma [www.hybpy.org](http://www.hybpy.org).
-- [ ] Add table for historical
-- [ ] Trained Hmod
+- [x] Add table for historical
+- [x] Trained Hmod
+- [x] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
 - [ ] Add cloud functions for trainning
 - [ ] Review Trained Hmod creation
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
-	- [ ] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
 
 
 ## Aesthetics:
