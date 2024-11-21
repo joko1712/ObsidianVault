@@ -14,8 +14,8 @@
 - [x] Add description to hybpy link google = *Add **_What is HYBpy?_**
 - [x] Add EndedAt # MIGHT BE DONE
 - [x] Update PrintScreen on HELP
-- [ ] Contact Us
-- [ ] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
+- [x] Contact Us
+- [x] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
 	_HYBpy is designed to simplify the construction and analyses hybrid models of [bioprocesses](__[https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001](https://www.sciencedirect.com/science/article/pii/S0098135422002897?via%3Dihub#abs0001)__) and [biological systems](__[https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014](https://www.mdpi.com/2673-2688/4/1/14#B25-ai-04-00014)__)._
