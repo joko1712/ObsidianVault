@@ -30,13 +30,12 @@
 - [x] Show where you are on burger menu # Should be done
 - [x] Make Nova .png smaller
 - [x] Remove empty columns on csv examples
-- [ ] Alter Home:
-      "please feel free to contact us contact us at:" to "please feel free to contact us (email do Jose ou o meu)"  Add both to (contact us)
-- [ ] On guide alter Step 6: "Verify and Modify Mlm Settings" to "Verify and Modify ML Settings" and "After adding the ML component" 
+- [x] Alter Home: "please feel free to contact us contact us at:" to "please feel free to contact us (email do Jose ou o meu)"  Add both to (contact us)
+- [x] On guide alter Step 6: "Verify and Modify Mlm Settings" to "Verify and Modify ML Settings" and "After adding the ML component" 
 - [x] On the Help make the images from SBML2HYB smaller # DONE?
 - [x] Help alter the download SBML2HYB to: SBML2HYB tool](windows) or  (macOS) # DONE?
 - [x] Change hmod to HMOD # DONE?
-- [ ] Add line on each title#
+- [x] Add line on each title#
 - [ ] If batch_number is last column cut it
 ## Writting:
 - [ ] Write Article
