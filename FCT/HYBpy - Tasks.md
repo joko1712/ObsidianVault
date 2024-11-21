@@ -14,6 +14,7 @@
 - [x] Add description to hybpy link google = *Add **_What is HYBpy?_**
 - [x] Add EndedAt # MIGHT BE DONE
 - [ ] Update PrintScreen on HELP
+- [ ] Contact Us
 - [ ] Add print of hmod with explanation using arrows with button to download(mandatory)- NOT PRIORITY 
 - [ ] Add cloud functions for trainning
 - [ ] Add **_What is HYBpy?_**  _(a bold com letra um pouco maior)_
