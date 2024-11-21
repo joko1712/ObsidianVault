@@ -21,9 +21,9 @@
 - [x] Add table for historical
 - [x] Trained Hmod
 - [x] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
-- [ ] Make text smaller md/xs
+- [ ] Make text smaller md/xs 
 - [ ] Change website description
-- [ ] Reduce number of  decimal numbers
+- [x] Reduce number of  decimal numbers
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
 - [ ] Make Start Training smaller
 - [ ] Add cloud functions for trainning
