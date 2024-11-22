@@ -21,7 +21,7 @@
 - [x] Add table for historical
 - [x] Trained Hmod
 - [x] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
-- [ ] Make text smaller md/xs 
+- [x] Make text smaller md/xs 
 - [ ] Change website description
 - [x] Reduce number of  decimal numbers
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
@@ -47,7 +47,7 @@
 - [ ] Add files to run local
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
-- [ ] Add cycle graph to Historical
-- [ ] Duration
+- [x] Add cycle graph to Historical
+- [x] Duration
 - [ ] Add stopper to training
 - [ ] Limit 2 trains per user
