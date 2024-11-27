@@ -22,10 +22,10 @@
 - [x] Trained Hmod
 - [x] In “Help” add in “**Step 3: Upload your data file.**” -> “The data file must be filled out using the template file structure”.
 - [x] Make text smaller md/xs 
-- [ ] Change website description
 - [x] Reduce number of  decimal numbers
+- [x] Make Start Training smaller
 - [ ] In Simulation only test batch or only initial line of batch and control variables over time
-- [ ] Make Start Training smaller
+- [ ] Change website description -- Don't know why is this not done
 - [ ] Add cloud functions for trainning
 - [ ] Review Trained Hmod creation
 
@@ -44,10 +44,10 @@
 - [ ] Write Article
 
 ## Extra:
+- [x] Add cycle graph to Historical
+- [x] Duration
 - [ ] Add files to run local
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
-- [x] Add cycle graph to Historical
-- [x] Duration
 - [ ] Add stopper to training
 - [ ] Limit 2 trains per user
