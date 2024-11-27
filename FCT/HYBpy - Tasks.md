@@ -28,6 +28,10 @@
 - [ ] Change website description -- Don't know why is this not done
 - [ ] Add cloud functions for trainning
 - [ ] Review Trained Hmod creation
+- [ ] Add Csv download to guide
+- [ ] Add Hmod print to guide
+- [ ] Make login and sign up text and input smaller
+
 
 ## Aesthetics:
 - [x] Show where you are on burger menu # Should be done
@@ -42,7 +46,7 @@
 - [ ] If batch_number is last column cut it
 ## Writting:
 - [ ] Write Article
-
+- [ ] Add Comparison and Analysis
 ## Extra:
 - [x] Add cycle graph to Historical
 - [x] Duration
