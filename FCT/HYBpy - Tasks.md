@@ -32,7 +32,8 @@
 - [ ] Add Hmod print to guide
 - [x] Make login and sign up text and input smaller
 - [ ] if Last colum is number of batches remove from batch representation
-
+- [ ] When user gives 1 batch use it for "train in the simulation". when the user gives a multitude of batches use 1 for "train" and the others for test. 
+	- [ ] Test if user gives 1 line of a batch it works
 
 ## Aesthetics:
 - [x] Show where you are on burger menu # Should be done
