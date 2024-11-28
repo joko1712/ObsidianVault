@@ -30,7 +30,8 @@
 - [ ] Review Trained Hmod creation
 - [ ] Add Csv download to guide
 - [ ] Add Hmod print to guide
-- [ ] Make login and sign up text and input smaller
+- [x] Make login and sign up text and input smaller
+- [ ] if Last colum is number of batches remove from batch representation
 
 
 ## Aesthetics:
