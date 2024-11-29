@@ -49,6 +49,11 @@
 ## Writting:
 - [ ] Write Article
 - [ ] Add Comparison and Analysis
+- [ ] Sec. 3 terá que ser reescrita. Veja por favor o estilo de escrita deste tipo de secções em artigos do mesmo tipo.
+	- [ ] https://pmc.ncbi.nlm.nih.gov/articles/PMC6108935/#S3 
+	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-018-0607-5#Sec14  
+	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-7-74#Sec2 
+	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-6-8#Sec4
 ## Extra:
 - [x] Add cycle graph to Historical
 - [x] Duration
