@@ -24,7 +24,7 @@
 - [x] Make text smaller md/xs 
 - [x] Reduce number of  decimal numbers
 - [x] Make Start Training smaller
-- [ ] In Simulation only test batch or only initial line of batch and control variables over time
+- [x] In Simulation only test batch or only initial line of batch and control variables over time
 - [ ] Change website description -- Don't know why is this not done
 - [ ] Add cloud functions for trainning
 - [ ] Review Trained Hmod creation
