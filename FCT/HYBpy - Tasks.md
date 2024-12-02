@@ -64,5 +64,6 @@
 - [ ] Add files to run local
 - [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
+	- [ ] https://mui.com/material-ui/react-tabs/
 - [ ] Add stopper to training
 - [ ] Limit 2 trains per user
