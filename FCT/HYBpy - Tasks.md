@@ -1,5 +1,7 @@
 # TASKS:
 
+# TRY THE GCLOUD CONSOLE TO UPLOAD THE UPLOADFILE DIRECTLY IF POSSIBLE COM THE DIRECTORY
+
 ## Functional:
 - [x] Add Template csv and .hmod to the button
 - [x] Add link to SBML2HYB to Guide
