@@ -1,7 +1,5 @@
 # TASKS:
 
-# TRY THE GCLOUD CONSOLE TO UPLOAD THE UPLOADFILE DIRECTLY IF POSSIBLE COM THE DIRECTORY
-
 ## Functional:
 - [x] Add Template csv and .hmod to the button
 - [x] Add link to SBML2HYB to Guide
@@ -64,7 +62,7 @@
 - [x] Add cycle graph to Historical
 - [x] Duration
 - [ ] Add files to run local
-- [ ] Fix issue when showing graphs if only 1 graph don't show cycle 
+- [x] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
 	- [ ] https://mui.com/material-ui/react-tabs/
 - [ ] Add stopper to training
