@@ -28,9 +28,9 @@
 - [x] Make Start Training smaller
 - [x] In Simulation only test batch or only initial line of batch and control variables over time
 - [ ] Change website description -- Don't know why is this not done
-- [ ] Add cloud functions for trainning
+- [x] Add cloud functions for trainning
 - [ ] Review Trained Hmod creation
-- [ ] Add Csv download to guide
+- [x] Add Csv download to guide
 - [ ] Add Hmod print to guide
 - [x] Make login and sign up text and input smaller
 - [ ] if Last colum is number of batches remove from batch representation
