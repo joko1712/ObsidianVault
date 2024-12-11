@@ -11,7 +11,6 @@ Esta será a estrutura da apresentação de hoje:
 	5. Demo da tool em si
 	6. Concluimos com user inputs que já utilizaram a tool e o que pode ainda a ser melhorado
 
-
 # 3
 1. Explicar o que sao bioreactores
 	1. Um **reator biológico** ou **biorreator** corresponde a um volume onde decorrem reações biológicas
