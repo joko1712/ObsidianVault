@@ -14,7 +14,9 @@ Esta será a estrutura da apresentação de hoje:
 
 # 3
 1. Explicar o que sao bioreactores
+	1. Um **reator biológico** ou **biorreator** corresponde a um volume onde decorrem reações biológicas
 2. explicar o que sao hybrid models / o que e hybrid modeling
+	1. Hybrid models são modelos onde agregamos o modelo mecanistico com o modelo de machine learning
 3. Objetivo que será ( dar a opção a pessoas com ou sem conhecimento de programação a opção de conseguirem treinar e analisar estes hybrid models)
 
 Mas porque é que esta tool é necessaria de certo já existe algo semelhante
@@ -37,13 +39,7 @@ O processamento dos dados é aplicado a 2 ficheiros estes ficheiros são o Hmod 
 # 8
 Depois de termos então os ficheiros com toda a informação necessária da-se inicio ao treino. A configuração do modelo de machine learning está dentro do ficheiro hmod. As opções que temos são definir a estrutura da neural network o numero de layers e o numero de hidden nodes, que tipo de activation function tangente hiperbolica ou ReLU, depois temos a decisão entre os metodos de treino Trust Region Reflective(trf), trust-constr trust region contructive se o utilizador utilizar o calculo do jacobiano ou o metodo L-BFGS-B, Simulated Annealing e o ADAM, de seguida o utilizador pode tambem definir o numero de integrações no caso do TRF este numero será o número máximo de avaliações da função, temos tambem o numero de re inicializações depois existem opções mais delicadas que é recomendado ao utlizador menos experiente não alterar estas são: se o jac é calculado pela nossa função de treino ou se é calculado pelo metodo, se existe calculo de hessiano, o tau (), o modo de treino se é direto, indireto ou semi direto () e por fim se existe bootstraping ou não.
 
-### Ter a explicação da diferença entre os metodos de treino.
-Ter uma melhor explicação para cada metodo nao so que tipo de metodo é.
 
-### Ter a explição da diferença entre as activation functions.
-
-
-### Sure não faço normalização dos dados todos mas existe normalização dos inputs o que neste caso é suficiente. Explicar o porque de não estar preocupado com overfitting
 
 
 # 9
@@ -55,8 +51,7 @@ Para deixar uma melhor explicação da criação da rede neuronal.
 # 10
 A tool já foi testada com diversos modelos diferentes mas estes são os mais relevantes para demonstrar a generalidade da tool começando com o Park and Ramirez que podemos ver a (Aludir para a imagem com o modelo de ODES). Este modelo foi treinado com uma network com 1 layer e 3 hidden nodes com a activation function Tangente hiperbolica o metodo ADAM e 4000 sendo o numero de intetrações. Estes foram os gráficos gerados pela tool á esquerda temos o gráfico com a previsão do modelo face a dados temporais de teste, a linha vermelha representa a previsão e os pontos a verde representão as medições e os seus Desvios padrões respetivos. No grafico da direita conseguimos ver as todas as medições temporais presentes no ficheiro csv onde o eixo do y representa o valor onbservado nas medicões e o eixo do x o valor previsto pela network, ou seja o quão mais perto da euação da reta y=x melhor é a previsão da network. Mais a cima temos as medições da média do erro ao quadrado (diferença entre os valores previstos e o valores observados) e tambem o coeficiente de determinação (expressa a quantidade da variância dos dados). 
 
-Neste caso expecífico acontece algo que não é comum existe um basis nos dados. 
-
+Neste caso expecífico acontece algo que não é comum pois existe um basis nos dados. 
 
 
 # 11
@@ -66,7 +61,13 @@ Este é o modelo Chassagnole que podemos ver a (rede metabolica). Este modelo fo
 DEMO!!!!
 
 # 13
-### Não sei bem como explicar que como a tool e suposto ser super user friendly dado a isto tem vindo a ser alterada para melhor fruto do utilizador estas changes vem em forma de sugestões da equipa do lab e também (""). Mencionar que a tool foi exposta em forma de poster em uma conferencia em Copenhaga e também que está a ser finalizado um paper que será submetido numa revista cientifica ("nome da revista").
+### Não sei bem como explicar que como a tool e suposto ser super user friendly dado a isto tem vindo a ser alterada para melhor fruto do utilizador estas changes vem em forma de sugestões da equipa do lab e também 
+
+A tool foi utilizada em Outubro no workshop da ("ESACT") - European Society for Animal Cell Technology - em Espanha dado Dr. Rui Oliveira. 
+
+A tool foi exposta em forma de poster também em Outubro na conferencia ESBES (European  Society of Biochemical Engineering Sciences) na Dinamarca
+
+Estamos também a finalizar um paper que será submetido na revista cientifica ("Computers & Chemical Engineering").
 
 
 # 14
