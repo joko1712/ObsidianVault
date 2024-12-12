@@ -15,22 +15,23 @@ Esta será a estrutura da apresentação de hoje:
 1. Explicar o que sao bioreactores
 	1. Um **reator biológico** ou **biorreator** corresponde a um volume onde decorrem reações biológicas
 2. explicar o que sao hybrid models / o que e hybrid modeling
-	1. Hybrid models são modelos onde agregamos o modelo mecanistico com o modelo de machine learning
+	1. Hybrid models são a combinação dos modelos mecanisticos com os modelos de machine learning para modelar no nosso caso expecifico reactor biologicos
 3. Objetivo que será ( dar a opção a pessoas com ou sem conhecimento de programação a opção de conseguirem treinar e analisar estes hybrid models)
-
+		1
 Mas porque é que esta tool é necessaria de certo já existe algo semelhante
 
 # 4
-Verdade, já existe mas as opções que temos de momento não são acessiveis ou publico aka: commercial softwares, ou e esta será a mais parecida a HYBpy a HybridML mas infelizmente para utilizar esta tool os utilizadores têm de ter conhecimentos de programação pois tudo é feito em código. É aqui que estra HYBpy como solucionadora de ambos problemas. 
+Verdade, já existe mas as opções que temos de momento não são acessiveis tudos aka: commercial softwares.
+HYBpy a HybridML mas infelizmente para utilizar esta tool os utilizadores têm de ter conhecimentos de programação pois tudo é feito em código. 
+É aqui que estra HYBpy como soluçao de ambos problemas. 
 
 ## Como é que vou falar sobre o SBML2HYB?
 ## Maybe falar aqui o que é HMOD e SBML?
 
 # 5
-Para ser mais fácil a apresentação desta tool eu dividia em 2 partes. A 1º vamos falar apenas da implementação python da tool ou seja o processamento da informação e depois o treino e a criação dos gráficos.
-
+Para ser mais fácil a apresentação desta tool eu dividia em 2 partes. A 1º vamos falar apenas da implementação python da tool ou seja o processamento da informação e depois o treino e depois faleremos da interface e do site.
 # 6
-Sobre a tool em si já referi um pouco no slide anterior mas a tool funciona desta maneira primeiro os dados do utilizador sao processados, após esse processo os dados são enviados para o treino do modelo e quando o modelo der o resultado do treino passamos a criação dos plots e das métricas do modelo
+Começando entao pela implementação python primeiro os dados do utilizador sao processados, após esse processo os dados são enviados para o treino do modelo e quando o modelo der o resultado do treino passamos a criação dos plots e das métricas do modelo
 
 # 7
 O processamento dos dados é aplicado a 2 ficheiros estes ficheiros são o Hmod que possui a informção sobre o modelo mecanistico do bioreactor e pode ou não ter a informação sobre o modelo de machine learning ( se este não existir o utilizador ao inserir no website vai lhe ser pedido que preencha umas caixas de texto para que este componenete seja introduzido no hmod) e o ficheiro CSV que contem as medições temporais das especies, a seu Desvio padrão e outros elementos como por exemplo o volume, o feedrate e a concentração. Este ficheiro tem de ser analisado pela tool e organizado pelos diferentes batches e dependendo da seleção dos batches feita pelo utilizador aka quais serao os batches utilizados para treino e utilizados para testeO processamento do hmod foi feito para garantir uma compatibilidade entre o HYBpy e o SBML2HYB mesmo com a network treinada. Ambos os ficheiros podem ser criados de raiz os utilizadores para tal podem seguir os ficheiros disponiveis no website.
