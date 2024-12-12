@@ -1,24 +1,18 @@
 
 # 1
-Bom dia vou dar então inicio a apresentação da tese HYBpy: A Web-Based Platform for Hybrid Modeling of Bioprocesses.
+Bom tarde o meu nome é José Pedreira e venho hoje apresentar a minha tese de mestrado HYBpy: A Web-Based Platform for Hybrid Modeling of Bioprocesses.
 
 # 2
 Esta será a estrutura da apresentação de hoje: 
 	1. Contextualizar e demonstrar o problema que a tool HYBpy vem a resolver
-	2. Referir as tools que mais se asemilhao á HYBpy e o porque de mesmo com algumas delas ainda ser essencial a criação da tool HYBpy
-	3. Depois explicar como é a tool funciona e quais os principais detalhes
+	2. Referir as tools que mais se asemilham á HYBpy 
+	3. Depois explicar como a tool funciona e quais os principais detalhes
 	4. Analisar 2 estudos de caso em que a tool foi posta em diferentes condições para podermos avaliar a performance/resultados
-	5. Demo da tool em si
-	6. Concluimos com user inputs que já utilizaram a tool e o que pode ainda a ser melhorado
+	5. Live Demo da tool
+	6. Concluimos o que pode ainda a ser melhorado
 
 # 3
-1. Explicar o que sao bioreactores
-	1. Um **reator biológico** ou **biorreator** corresponde a um volume onde decorrem reações biológicas
-2. explicar o que sao hybrid models / o que e hybrid modeling
-	1. Hybrid models são a combinação dos modelos mecanisticos com os modelos de machine learning para modelar no nosso caso expecifico reactor biologicos
-3. Objetivo que será ( dar a opção a pessoas com ou sem conhecimento de programação a opção de conseguirem treinar e analisar estes hybrid models)
-		1
-Mas porque é que esta tool é necessaria de certo já existe algo semelhante
+Vou dar apenas uma pequena contextualizaçao primeiro o que é um reactor biológico: é um volume onde decorrem reações biológicas. Deseguida Hybrid models são a  combinação dos modelos mecanisticos com os modelos de machine learning para modelar no nosso caso expecifico reactores biologicos. O objectivo da HYBpy é dar a opção a investigadores com ou sem conhecimento de programação a opção de conseguirem treinar e analisar hybrid models
 
 # 4
 Verdade, já existe mas as opções que temos de momento não são acessiveis tudos aka: commercial softwares.
