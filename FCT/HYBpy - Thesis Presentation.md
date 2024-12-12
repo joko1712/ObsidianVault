@@ -47,7 +47,7 @@ Este é o modelo Chassagnole que podemos ver a (rede metabolica). Este modelo fo
 # 12
 DEMO!!!!
 
-
+vamos falar agora entao das limitacoes acutais e como podemos mitigalas no futuro
 # 14
 Devo também mencionar que já ouve muito trabalho feito na tool mas que esta tem muito ainda para ser melhorada, uma das principais melhorias seria o tempo de execução estamos de momento a tratar deste problema metendo a aplicação em um cloud service. Para futuro umas das principais melhorias será diminuir o tamanho dos tensores utilizados para os calculos matriciais assim perdemos um pouco de precisao (não assim tanto para ser detetável) mas melhoramos bastante o tempo de execução. E outro melhoramento que pode ser feito é passar os calculos e toda a execução em vez de ser feita no CPU para o GPU.
 
