@@ -12,6 +12,8 @@ Esta será a estrutura da apresentação de hoje:
 	6. Concluimos o que pode ainda a ser melhorado
 
 # 3
+Hybpy tem como funçao principal implementar e integrar hybrid models de reactores biologicos.
+
 Vou dar apenas uma pequena contextualizaçao primeiro o que é um reactor biológico: é um volume onde decorrem reações biológicas. Deseguida Hybrid models são a  combinação dos modelos mecanisticos com os modelos de machine learning para modelar no nosso caso expecifico reactores biologicos. O objectivo da HYBpy é dar a opção a investigadores com ou sem conhecimento de programação a opção de conseguirem treinar e analisar hybrid models
 
 # 4
@@ -20,7 +22,7 @@ A HybridML é acessivle a todos mas para a sua utilização os utilizadores têm
 É aqui que estra HYBpy como soluçao de ambos problemas. 
 
 # 5
-Para ser mais fácil a apresentação desta tool eu dividia em 2 partes. A 1º vamos falar apenas da implementação python da tool ou seja o processamento da informação e depois o treino e em 2º faleremos da interface e do site.
+Para ser mais fácil a apresentação desta tool eu dividia em 2 partes. A 1º vamos falar apenas da implementação python da tool ou seja o processamento da informação e depois o treino e em 2º faleremos da interface e do site foi desenvolvida em react utilizando firebase como base de dados e Flask como backend.
 
 # 6
 Começando entao pela implementação python primeiro os dados do utilizador sao processados, após esse processo os dados são enviados para o treino e quando o metodo der o resultado do treino passamos a criação dos plots e das métricas.
