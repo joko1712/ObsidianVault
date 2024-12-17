@@ -60,8 +60,6 @@ A tool foi exposta em forma de poster também em Outubro na conferencia ESBES (E
 
 Estamos também a finalizar um paper que será submetido na revista cientifica ("Computers & Chemical Engineering").
 
-
-
 # 15
 Questoes? 
 
