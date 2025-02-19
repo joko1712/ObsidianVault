@@ -1,4 +1,5 @@
 https://sites.google.com/lbl.gov/cs267-spr2022
+https://www.coursera.org/specializations/pcdp#courses
 ## Lecture 1
 
 ![[Pasted image 20250219005002.png]]
@@ -28,3 +29,4 @@ Parallelism: multiple tasks are actually active at one time.
 A distributed system is inherently distributed, i.e., serving clients at different locations
 ![[Pasted image 20250219005632.png]]
 
+https://youtu.be/BBg06HthAeU?si=LVgO2eRTB0KsHpok&t=2496
