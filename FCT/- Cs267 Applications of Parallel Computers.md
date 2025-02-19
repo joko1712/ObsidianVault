@@ -1,4 +1,4 @@
-
+https://sites.google.com/lbl.gov/cs267-spr2022
 ## Lecture 1
 
 ![[Pasted image 20250219005002.png]]
