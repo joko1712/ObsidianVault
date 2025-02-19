@@ -25,15 +25,15 @@
 - [x] Reduce number of  decimal numbers
 - [x] Make Start Training smaller
 - [x] In Simulation only test batch or only initial line of batch and control variables over time
-- [ ] Change website description -- Don't know why is this not done
+- [x] Change website description -- Don't know why is this not done
 - [x] Add cloud functions for trainning
-- [ ] Review Trained Hmod creation
+- [x] Review Trained Hmod creation
 - [x] Add Csv download to guide
-- [ ] Add Hmod print to guide
+- [x] Add Hmod print to guide
 - [x] Make login and sign up text and input smaller
-- [ ] if Last colum is number of batches remove from batch representation
-- [ ] When user gives 1 batch use it for "train in the simulation". when the user gives a multitude of batches use 1 for "train" and the others for test. 
-	- [ ] Test if user gives 1 line of a batch it works
+- [x] if Last colum is number of batches remove from batch representation
+- [x] When user gives 1 batch use it for "train in the simulation". when the user gives a multitude of batches use 1 for "train" and the others for test. 
+	- [x] Test if user gives 1 line of a batch it works
 
 ## Aesthetics:
 - [x] Show where you are on burger menu # Should be done
@@ -45,23 +45,23 @@
 - [x] Help alter the download SBML2HYB to: SBML2HYB tool](windows) or  (macOS) # DONE?
 - [x] Change hmod to HMOD # DONE?
 - [x] Add line on each title#
-- [ ] If batch_number is last column cut it
+- [x] If batch_number is last column cut it
 ## Writting:
 - [ ] Write Article
 - [ ] Add Comparison and Analysis
-- [ ] Sec. 3 terá que ser reescrita. Veja por favor o estilo de escrita deste tipo de secções em artigos do mesmo tipo.
-	- [ ] https://pmc.ncbi.nlm.nih.gov/articles/PMC6108935/#S3 
+- [x] Sec. 3 terá que ser reescrita. Veja por favor o estilo de escrita deste tipo de secções em artigos do mesmo tipo.
+	- [x] https://pmc.ncbi.nlm.nih.gov/articles/PMC6108935/#S3 
 		    [[Tellurium.pdf]]
-	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-018-0607-5#Sec14  
+	- [x] https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-018-0607-5#Sec14  
 			[[Escher_FBA.pdf]]
-	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-7-74#Sec2 
+	- [x] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-7-74#Sec2 
 			[[Cobrapy.pdf]]
-	- [ ] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-6-8#Sec4
+	- [x] https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-6-8#Sec4
 			[[FAME.pdf]]
 ## Extra:
 - [x] Add cycle graph to Historical
 - [x] Duration
-- [ ] Add files to run local
+- [x] Add files to run local
 - [x] Fix issue when showing graphs if only 1 graph don't show cycle 
 - [ ] Add Tab to Results
 	- [ ] https://mui.com/material-ui/react-tabs/
