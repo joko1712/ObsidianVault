@@ -1,6 +1,7 @@
 [[CP - Lectures]]
 [[CP - Labs]]
 [[CP - Tests]]
+[[CP - Notes]]
 
 
 
