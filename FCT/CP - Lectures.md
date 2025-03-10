@@ -4,3 +4,5 @@
 [[2025-03-10 T01 Administrivia.pdf]]
 
 [[2025-03-10 T02 Parallel Architectures.pdf]]
+
+
