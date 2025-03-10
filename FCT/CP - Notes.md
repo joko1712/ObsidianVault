@@ -13,3 +13,5 @@ When designing a parallel algorithm, it is actually important to pay attention t
 	• The span (the critical path). 
 	• The total amount of communication (including that implicit in sharing memory).
 
+Load balancing is the problem of ensuring that all processors are doing their fair share of the work.
+
