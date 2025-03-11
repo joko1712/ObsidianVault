@@ -3,3 +3,5 @@
 [[Abraham Silberschatz, Henry Korth and S. Sudarshan - Database System Concepts. 7-McGraw-Hill Education (2020).pdf]]
 
 
+### Raid
+Redundant arrays of independent disks (RAID).
