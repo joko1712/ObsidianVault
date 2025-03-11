@@ -6,5 +6,6 @@
 
 # SBD:
 - [ ] HammerDB
-- [ ] Install and run Oracle
+- [ ] Install Oracle Developer
 - [ ] Read Chapter 12 of Database System Concepts - 7th Edition
+- [ ] 
