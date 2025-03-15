@@ -13,7 +13,8 @@ Connecton type: Basic
 
 # SQL Procedure Class
 [[chapter1.pdf]]
-
 [[chapter2.pdf]]
 [[chapter3.pdf]]
 [[chapter4.pdf]]
+
+www.hackerrank.com
