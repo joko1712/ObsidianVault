@@ -10,9 +10,10 @@ Port: 1521
 Connecton type: Basic
 
 [[LabP1-PLSQL.pdf]]
-![[LabP1-PLSQL.pdf]]
 
 # SQL Procedure Class
+[[chapter1.pdf]]
 
-https://www.youtube.com/watch?v=DX8I5SmB6jo&list=PLNcg_FV9n7qZY_2eAtUzEUulNjTJREhQe&index=30
-
+[[chapter2.pdf]]
+[[chapter3.pdf]]
+[[chapter4.pdf]]
