@@ -12,3 +12,7 @@ Connecton type: Basic
 [[LabP1-PLSQL.pdf]]
 ![[LabP1-PLSQL.pdf]]
 
+# SQL Procedure Class
+
+https://www.youtube.com/watch?v=DX8I5SmB6jo&list=PLNcg_FV9n7qZY_2eAtUzEUulNjTJREhQe&index=30
+
