@@ -44,5 +44,23 @@ Various hardware mechanisms enable parallel computation. The two most important 
 • **Thread parallelism:** A mechanism for implementing parallelism in hardware using a separate flow of control for each worker. Thread parallelism supports both regular and irregular parallelism, as well as functional decomposition.
 • **Vector parallelism:** A mechanism for implementing parallelism in hardware using the same flow of control on multiple data elements. Vector parallelism naturally supports regular parallelism but also can be applied to irregular parallelism with some limitations.
 
+So what is performance? Usually it is about one of the following:
+
+• Reducing the _total time_ it takes to compute a single result (**latency**)
+• Increasing the _rate_ at which a series of results can be computed (**throughput**)
+• Reducing the _power consumption_ of a computation
+
+**Latency** is the time it takes to complete a task.
+**Throughput** is the rate a which a series of tasks can be completed.
+
+Two important metrics related to performance and parallelism are **speedup** and **efficiency**. Speedup compares the latency for solving the identical computational problem on one hardware unit **(“worker”)** versus on _P_ hardware units:
+
+![[Screenshot 2025-03-17 at 14.49.58.png]]
+where _T_1 is the latency of the program with one worker and _T__P_ is the latency on _P_ workers.
+
+**Efficiency** is speedup divided by the number of workers:
+![[Screenshot 2025-03-17 at 14.52.01.png]]
+Efficiency measures return on hardware investment. Ideal efficiency is 1 (often reported as 100%).
+
 ## The Art of Multiprocessor Programming; Chapter 2
 [[ch02 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
