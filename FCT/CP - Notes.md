@@ -28,3 +28,6 @@ To achieve portable parallel programming you should you should avoid vector intr
 
 Using abstractions for specifying vectorization rather than vector intrinsics avoids dependencies on the peculiarities of a particular vector instruction set, such as the number of elements in a vector.
 The reasons for avoiding direct threading are more subtle, but basically a task model has less overhead, supports better composability, and gives the system more freedom to allocate resources. In particular, tasks support the specification of optional parallelism.
+
+## Structured Parallel Programming: Patterns for Efficient Computation; Chapter 2
+[[01]]

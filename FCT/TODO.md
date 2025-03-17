@@ -1,9 +1,9 @@
 
 # CP:
-- [ ] Finish Lab1
+- [x] Finish Lab1
 - [ ] ~~Read Chapter 1~~ and 2 of Structured Parallel Programming: Patterns for Efficient Computation;
 - [ ] Fill form for the group
-- [ ] Finish Lab2
+- [x] Finish Lab2
 - [ ] 
 
 # SBD:
