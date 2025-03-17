@@ -4,7 +4,7 @@
 - [ ] ~~Read Chapter 1~~ and 2 of Structured Parallel Programming: Patterns for Efficient Computation;
 - [ ] Fill form for the group
 - [x] Finish Lab2
-- [ ] 
+- [ ] Read Chapter 2 of The Art of Multiprocessor Programming
 
 # SBD:
 - [x] Install Oracle Developer

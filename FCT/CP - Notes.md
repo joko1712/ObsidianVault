@@ -30,4 +30,8 @@ Using abstractions for specifying vectorization rather than vector intrinsics av
 The reasons for avoiding direct threading are more subtle, but basically a task model has less overhead, supports better composability, and gives the system more freedom to allocate resources. In particular, tasks support the specification of optional parallelism.
 
 ## Structured Parallel Programming: Patterns for Efficient Computation; Chapter 2
-[[01]]
+[[02 - Structured Parallel Programming - Cap 2.pdf]]
+
+
+## The Art of Multiprocessor Programming; Chapter 2
+[[ch02 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
