@@ -32,6 +32,17 @@ The reasons for avoiding direct threading are more subtle, but basically a task 
 ## Structured Parallel Programming: Patterns for Efficient Computation; Chapter 2
 [[02 - Structured Parallel Programming - Cap 2.pdf]]
 
+The best overall strategy for **scalable parallelism** is **data parallelism**. We define data parallelism as any kind of parallelism that grows as the data set grows or, more generally, as the problem size grows. Typically the data is split into chunks and each chunk processed with a separate task.
+
+The opposite of data parallelism is **functional decomposition**, an approach that runs different program functions in parallel. At best, functional decomposition improves performance by a constant factor. For example, if a program has functions _f_, _g_, and _h_, running them in parallel at best triples performance, but only if all three functions take exactly the same amount of time to execute and do not depend on each other, and there is no overhead. Otherwise, the improvement will be less. Functional decomposition can be used to meet performance targets but it should not be the primary strategy, because it does not scale.
+
+• **Regular parallelism:** The tasks are similar and have predictable dependencies.
+• **Irregular parallelism:** The tasks are dissimilar in a way that creates unpredictable dependencies.
+
+Various hardware mechanisms enable parallel computation. The two most important mechanisms are **thread parallelism** and **vector parallelism**:
+
+• **Thread parallelism:** A mechanism for implementing parallelism in hardware using a separate flow of control for each worker. Thread parallelism supports both regular and irregular parallelism, as well as functional decomposition.
+• **Vector parallelism:** A mechanism for implementing parallelism in hardware using the same flow of control on multiple data elements. Vector parallelism naturally supports regular parallelism but also can be applied to irregular parallelism with some limitations.
 
 ## The Art of Multiprocessor Programming; Chapter 2
 [[ch02 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
