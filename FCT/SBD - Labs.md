@@ -18,3 +18,9 @@ Connecton type: Basic
 [[chapter4.pdf]]
 
 www.hackerrank.com
+
+
+# Lab2 - 18/03/2025
+
+[[LabP2 - PLSQL.pdf]]
+
