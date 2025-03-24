@@ -65,3 +65,67 @@ Efficiency measures return on hardware investment. Ideal efficiency is 1 (often 
 ## The Art of Multiprocessor Programming; Chapter 2
 [[ch02 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
 
+### Introduction to Mutual Exclusion
+
+**Definition:** Mutual exclusion ensures only one thread accesses critical sections at a time to avoid conflicts and ensure data integrity. Crucially, this prevents race conditions, which could corrupt shared data.
+### Key Concepts
+#### Time and Events
+- **Events**: Instantaneous state transitions within threads; crucial for understanding thread interaction.
+- **Intervals**: Duration between two events, used to analyze concurrent execution.
+- **Precedence Relation**: Denoted as →; essential for defining clear execution ordering among threads.
+#### Critical Sections
+- Code segments requiring exclusive access to prevent data inconsistencies.
+- Implemented using **Lock objects** with methods:
+    - `lock()`: Acquire exclusive access; threads must wait if unavailable.
+    - `unlock()`: Release access to allow other waiting threads to proceed.
+- **Lock Properties:**
+    - **Mutual exclusion**: Only one thread can hold the lock, preventing concurrent access.
+    - **Freedom from deadlock**: Ensures continuous system progress, eliminating permanent freezes.
+    - **Freedom from starvation**: Guarantees fairness by ensuring all threads eventually gain access.
+### Two-thread Lock Solutions
+#### LockOne Class
+- Uses two Boolean flags to control entry.
+- Critical limitation: **Deadlock-prone** if both threads simultaneously set their flags.
+#### LockTwo Class
+- Employs a single "victim" variable, determining which thread yields.
+- Critical limitation: Requires **concurrent execution** to avoid deadlock.
+#### Peterson’s Algorithm
+- Integrates flags and victim variables, achieving a robust balance.
+- Crucially ensures both **mutual exclusion** and **starvation-freedom**, overcoming weaknesses of LockOne and LockTwo.
+### Deadlocks and Livelocks
+- **Deadlock**: Occurs when threads wait indefinitely for each other, halting progress.
+- **Livelock**: Threads actively change states without making meaningful progress, continuously blocking each other.
+#### Freedom from Deadlock
+- Vital for system reliability; guarantees that the system never enters a permanent wait state, ensuring continuous operational progress.
+#### Freedom from Starvation
+- Essential for fairness; ensures that no thread is indefinitely postponed from entering the critical section, though delays can be unpredictable.
+### Filter Lock (Generalization for N threads)
+- Structured as an **N-level lock**, where threads sequentially pass through levels.
+- Critically guarantees **mutual exclusion** and robustly prevents **starvation**, scalable to a large number of threads.
+### Fairness
+- **First-come-first-served (fairness)**: Prioritizes threads by arrival order to the lock.
+- Lock method clearly divided into:
+    - **Doorway** (bounded wait-free): Quick determination of entry order.
+    - **Waiting section** (unbounded): Threads wait based on their determined order.
+### Lamport’s Bakery Algorithm
+- Highly regarded for fairness, inspired by bakery ticket systems.
+- Crucially ensures orderly service via numbered tickets, guaranteeing fairness, and freedom from deadlock/starvation.
+- Main limitation: Ticket numbers continuously increase, posing potential overflow issues.
+### Bounded Timestamps
+- Resolves Bakery algorithm’s overflow issue through bounded numbering schemes.
+- Utilizes a structured graph-based system (T-graphs) to manage timestamps.
+- Essential for maintaining proper dominance relations among competing threads
+### Lower Bounds
+- **Fundamental Limit**: Demonstrates critical theoretical constraint—minimum of n distinct memory locations needed for n-thread deadlock-free mutual exclusion using simple read/write operations.
+- Important Implication: Highlights the theoretical optimality of Peterson’s and Bakery algorithms, and motivates exploration of advanced synchronization primitives for practical solutions.
+### Chapter Summary
+- Reinforces the importance of mutual exclusion in concurrent programming for data integrity.
+- Early algorithms serve foundational conceptual roles, while real-world scenarios demand stronger primitives.
+- Emphasizes the importance of rigorous algorithmic proofs (e.g., covering arguments) for deep comprehension and assurance of correctness.
+### Important Algorithms
+- **Peterson’s Algorithm:** Elegant foundational two-thread solution ensuring fairness and reliability.
+- **Filter Lock:** Scalable for practical multi-thread environments, generalizing Peterson’s principles.
+- **Bakery Algorithm:** Illustrative fairness model, highly instructive despite practical scalability concerns.
+
+### Exercises 
+[[CP - Exercises]]
