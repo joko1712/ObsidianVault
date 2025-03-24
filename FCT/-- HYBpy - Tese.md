@@ -1,5 +1,5 @@
 [[HYBpy - Tasks]]
-[[Hybpy - Writting]]
+[[HYBpy - Writting]]
 [[HYBpy - Thesis Presentation]]
 [[HYBpy - Cloud Work]]
 
