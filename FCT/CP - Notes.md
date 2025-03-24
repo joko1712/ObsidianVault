@@ -64,3 +64,4 @@ Efficiency measures return on hardware investment. Ideal efficiency is 1 (often 
 
 ## The Art of Multiprocessor Programming; Chapter 2
 [[ch02 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
+
