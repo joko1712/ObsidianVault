@@ -128,4 +128,53 @@ Efficiency measures return on hardware investment. Ideal efficiency is 1 (often 
 - **Bakery Algorithm:** Illustrative fairness model, highly instructive despite practical scalability concerns.
 
 ### Exercises 
-[[CP - Exercises]]
+
+# [[CP - Exercises]]
+
+### Exercise 2.6 (Tree-lock)
+**1. Mutual Exclusion:**
+- Holds. At every node, Peterson’s algorithm ensures mutual exclusion between the two competing threads. A thread can only enter the critical section after acquiring the Peterson lock at every node up to the root. Thus, only one thread at a time can hold the lock at the root, ensuring mutual exclusion globally.
+**2. Freedom from Deadlock:**
+- Holds. Threads acquire locks from leaves upwards in a strictly hierarchical order, preventing circular dependencies. Hence, no deadlock can occur.
+**3. Freedom from Starvation:**
+- Holds. Peterson's algorithm at each node guarantees starvation-freedom. Thus, a thread that reaches a node will eventually pass through. Combined with the finite height of the tree, every thread eventually acquires the global lock.
+**Upper bound on acquisition attempts:**
+- Yes. A thread can be overtaken at most once per node along its path, thus the upper bound on the number of times the lock can be acquired and released by others is O(log n) for n threads.
+**Hierarchical Locking Structure (Additional Note):**
+- Tree-lock structures leverage simpler lock algorithms (like Peterson’s) combined hierarchically to efficiently manage mutual exclusion for large numbers of threads, facilitating parallelism while maintaining safety.
+---
+### Exercise 2.7 (ℓ-exclusion)
+**Modification Sketch (Filter Lock):**
+- Instead of only allowing a single thread at the final level, allow up to ℓ threads simultaneously.
+- Introduce an atomic counter at the final level, initialized to ℓ.
+- When a thread reaches the final level, it decrements the counter if it’s positive and enters; otherwise, it waits.
+- Upon exiting the critical section, the thread increments the counter, allowing another waiting thread to proceed.
+**Properties:**
+- **ℓ-exclusion:** Ensured by the counter limiting the number of threads in the critical section.
+- **ℓ-starvation-freedom:** Each waiting thread eventually proceeds as threads leaving the critical section increment the counter, making room for others.
+**Generalized Exclusion (Additional Note):**
+- Generalized (ℓ-)exclusion allows multiple threads (up to ℓ) to safely access the critical section concurrently, broadening the scope of synchronization from single-threaded mutual exclusion to controlled multi-threaded access.
+---
+### Exercise 2.11 (T³ Concurrent Counterexample)
+**Counterexample Explanation:**
+- Consider three threads A, B, and C concurrently performing label assignments on T³. Each picks a timestamp from distinct T² subgraphs simultaneously.
+- Thread A picks a timestamp from the first T² subgraph, thread B picks from the second, and thread C from the third, without observing the others clearly.
+- Due to concurrency, it’s possible to obtain a cycle of dominance relations between the chosen timestamps, resulting in no clear ordering.
+**Implication:**
+- This shows that sequential timestamp systems such as T³ do not trivially generalize to concurrent use cases because concurrent assignments break the total ordering required by mutual exclusion algorithms.
+**Timestamp Concurrency Issues (Additional Note):**
+- Sequential timestamp systems can fail in concurrent environments due to subtle concurrency-related issues, such as cyclical dependencies or insufficient total ordering, highlighting the importance of concurrency-aware designs.
+---
+### Exercise 2.14 (OneBit Algorithm)
+**Proof of Mutual Exclusion:**
+- Suppose two threads, A (with lower ID) and B, simultaneously attempt to enter.
+- Thread B explicitly waits (lines 10-13) until thread A's flag is false (since A has a lower ID).
+- A thus enters the critical section first; B enters only after A exits, setting its flag to false. Thus, mutual exclusion is guaranteed.
+**Proof of Deadlock-freedom:**
+- Consider threads ordered by their IDs. Each thread waits only for threads with smaller IDs.
+- Since threads release their flags (set them to false upon exit), each thread eventually sees all lower-ID threads as not interested.
+- Hence, no thread can wait indefinitely, ensuring deadlock-freedom.
+**Conclusion:**
+- The OneBit algorithm correctly achieves mutual exclusion and deadlock-freedom with minimal storage (exactly n bits for n threads), meeting the theoretical lower bound.
+**Optimal Memory Usage (Additional Note):**
+- Certain synchronization algorithms, like the OneBit algorithm, reach theoretical optimality by minimizing the required memory locations or bits, reflecting essential theoretical constraints and demonstrating efficiency in synchronization design.
