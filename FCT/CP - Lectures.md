@@ -13,3 +13,5 @@
 # T3 - 24/03/2025
 [[2025-03-24 T05-06 Concurrent Objects.pdf]]
 
+This is important for test:
+Correctness – Sequential Objects – Quiescent and Sequential Consistency – Linearizability – Progress Conditions
