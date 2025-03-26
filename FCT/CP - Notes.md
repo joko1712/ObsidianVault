@@ -178,3 +178,7 @@ Efficiency measures return on hardware investment. Ideal efficiency is 1 (often 
 - The OneBit algorithm correctly achieves mutual exclusion and deadlock-freedom with minimal storage (exactly n bits for n threads), meeting the theoretical lower bound.
 **Optimal Memory Usage (Additional Note):**
 - Certain synchronization algorithms, like the OneBit algorithm, reach theoretical optimality by minimizing the required memory locations or bits, reflecting essential theoretical constraints and demonstrating efficiency in synchronization design.
+
+## The Art of Multiprocessor Programming; Chapter 3
+[[ch03 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
+
