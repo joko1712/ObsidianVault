@@ -15,3 +15,6 @@
 
 This is important for test:
 Correctness – Sequential Objects – Quiescent and Sequential Consistency – Linearizability – Progress Conditions
+
+# T4 - 31/03/2025
+
