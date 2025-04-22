@@ -182,3 +182,96 @@ Efficiency measures return on hardware investment. Ideal efficiency is 1 (often 
 ## The Art of Multiprocessor Programming; Chapter 3
 [[ch03 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
 
+**Overview:**  
+This chapter explores concurrent objects, focusing on the criteria used to define and verify their correctness and progress properties. It discusses how concurrency affects object behavior and introduces several formal correctness conditions, including sequential consistency, linearizability, and quiescent consistency. The chapter also defines various progress conditions like wait-freedom, lock-freedom, and obstruction-freedom, and evaluates their practical implications.
+### Key Concepts:
+
+#### 1. Concurrency and Correctness:
+
+- Concurrent objects have methods invoked by multiple threads simultaneously, potentially overlapping in execution.
+- Correctness of concurrent objects involves safety (correct behavior) and liveness (ongoing progress).
+- Lock-based implementations ensure mutual exclusion but can limit concurrency due to sequential execution of method calls.
+
+**Example:**
+- A lock-based FIFO queue enforces correct behavior by using locks to prevent simultaneous access, maintaining sequential behavior.
+
+#### 2. Sequential Objects:
+
+- Traditional objects described by preconditions and postconditions assuming single-thread execution.
+- Concurrent methods challenge this approach due to overlapping calls, making sequential specifications inadequate.
+
+#### 3. Correctness Conditions:
+
+##### **a. Sequential Consistency:**
+
+- Method calls appear to take place in some sequential order consistent with program order (order of operations within a single thread).
+- Does not require preserving real-time order between different threads’ operations.
+- Nonblocking but not compositional (doesn't guarantee correctness when composed with other sequentially consistent components).
+
+**Illustration:**
+
+- Two threads concurrently enqueue and dequeue items might have ambiguous orders but must maintain program order internally within threads.
+
+##### **b. Linearizability (stronger than Sequential Consistency):**
+
+- Method calls appear to take effect instantaneously at a single point (linearization point) within their invocation and completion.
+- Preserves real-time ordering, ensuring consistency even when composed.
+- Compositional, making it suitable for complex systems built from individual linearizable components.
+
+##### **c. Quiescent Consistency (weaker than Linearizability):**
+
+- Enforces ordering only when the object is "quiescent" (no pending method calls).
+- Does not preserve program order or real-time ordering, but is compositional.
+- Suitable for high-performance systems where strict ordering is less critical.
+
+#### 4. Formal Definitions and Properties:
+
+##### Histories:
+
+- The behavior of concurrent objects modeled as "histories," sequences of method invocation and response events.
+- A sequential history is one without overlapping method calls.
+- Legal histories match a sequential specification of the object.
+
+##### Linearizability (formal definition):
+
+- A concurrent history is linearizable if it can be reordered into a legal sequential history (linearization) that respects real-time ordering.
+- Linearizability is compositional and nonblocking.
+
+#### 5. Memory Consistency Models:
+
+- Defines correctness for memory as a shared concurrent object.
+- Sequential consistency was historically assumed but modern systems often reorder memory operations for performance, complicating programming and verification.
+
+#### 6. Progress Conditions:
+
+Define how methods of concurrent objects guarantee completion under various conditions:
+
+##### Nonblocking Progress Conditions:
+
+- **Wait-Freedom (maximal progress):** Every thread's method calls finish within a finite number of steps regardless of other threads’ behavior.
+- **Lock-Freedom (minimal progress):** Guarantees progress for at least one thread's method call, potentially allowing starvation of others.
+- **Obstruction-Freedom:** Guarantees progress if a method executes in isolation (no conflicting operations concurrently executed).
+
+##### Blocking Progress Conditions:
+
+- **Deadlock-Freedom (minimal progress):** Some method completes given fair scheduling; blocking by threads possible.
+- **Starvation-Freedom (maximal progress):** Every method eventually completes if threads are fairly scheduled; still allows blocking.
+
+
+### Choosing Conditions:
+
+- Correctness and progress conditions depend on application requirements.
+- **Correctness:**
+    - Linearizability is most robust for complex, compositional systems.
+    - Sequential consistency suitable for standalone systems.
+    - Quiescent consistency suitable when high throughput outweighs strict order.
+
+- **Progress:**
+    
+    - Wait-free/lock-free essential for real-time, interactive systems.        
+    - Obstruction-free or blocking conditions suitable for applications tolerant to delays under specific scheduling assumptions.
+
+
+## The Art of Multiprocessor Programming; Chapter 4
+[[ch04 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
+
