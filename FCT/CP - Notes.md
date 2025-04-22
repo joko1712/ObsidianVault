@@ -275,3 +275,168 @@ Define how methods of concurrent objects guarantee completion under various cond
 ## The Art of Multiprocessor Programming; Chapter 4
 [[ch04 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
 
+**Introduction and Context:**
+
+Chapter 4 addresses the foundational aspects of concurrent computation in shared-memory systems, introducing and developing various abstract register models. It examines the progression from simple shared memory primitives to more sophisticated constructions and ultimately presents implementations of atomic registers and snapshots.
+
+### Key Points and Main Ideas:
+
+### 1. Concept of Shared Memory and Registers:
+
+- Concurrent computing involves multiple threads interacting through shared memory.    
+- Threads communicate by reading and writing shared locations called **registers**, implemented through simple shared memory primitives.
+- Threads are asynchronous, running at unpredictable speeds and delays.
+
+**Examples:**
+
+- Registers may hold simple Boolean values, integers, or object references.
+
+### 2. Types and Properties of Registers:
+
+Registers are classified by their properties of **safety**, **regularity**, and **atomicity**, and by the number of allowed readers/writers:
+
+- **Safe Register:**
+    
+    - Minimal guarantees: reads that overlap writes can return arbitrary values within the allowed range.
+    - Weakest form of synchronization.
+- **Regular Register:**
+    - Intermediate strength: reads overlapping a write may return the new or old value, but no arbitrary values.
+- **Atomic Register:**
+    - Strongest guarantees: ensures linearizability, meaning each operation appears to happen instantaneously at some point between its start and finish times.
+
+**Reader/Writer classifications:**
+
+- Single-Reader Single-Writer (**SRSW**)
+- Multi-Reader Single-Writer (**MRSW**)
+- Multi-Reader Multi-Writer (**MRMW**)
+
+### 3. Implementations and Constructions:
+
+The chapter demonstrates systematic constructions, proving how complex registers can be built from simpler ones, typically using Boolean and timestamped registers. The sequence of constructions is:
+
+- **Safe SRSW → Safe MRSW**  
+- **Safe Boolean MRSW → Regular Boolean MRSW**
+- **Regular Boolean MRSW → Regular M-valued MRSW**
+- **Regular SRSW → Atomic SRSW**
+- **Atomic SRSW → Atomic MRSW**
+- **Atomic MRSW → Atomic MRMW**
+
+Each step is carefully explained, including proofs of correctness, leveraging mechanisms like timestamps to order events and ensure linearizability.
+
+### 4. Atomic Snapshots:
+
+- A snapshot is an operation to atomically capture the values of multiple registers simultaneously.
+- The chapter presents two snapshot implementations:
+    - **Simple Snapshot (Obstruction-Free):**  
+        Repeatedly performs a "double collect" (two consecutive reads of all registers) until it sees no changes, ensuring a consistent snapshot.
+    - **Wait-Free Snapshot (Helping Mechanism):**  
+        Uses the helping approach where each `update()` operation takes a snapshot before updating. Scanning threads adopt snapshots from threads that have moved twice, ensuring wait-freedom and atomicity even under heavy contention.
+
+**Example Use Case:**
+
+- Snapshots are beneficial for backups, checkpoints, and debugging concurrent algorithms.
+
+
+### 5. Correctness and Progress Conditions:
+
+- Emphasizes linearizability (strongest correctness criteria) and explains the difference from weaker consistency models like safe and regular.
+- Discusses **wait-free** and **obstruction-free** progress properties:
+    - **Wait-Free:** Every thread completes its operations in a finite number of steps independently of others.
+    - **Obstruction-Free:** Operation completes only if it eventually executes without interruption.
+
+### 6. Key Techniques Illustrated:
+
+- **Timestamps:**  
+    Used throughout for ordering concurrent events and establishing atomicity.
+
+- **Helping Mechanisms:**  
+    Threads help complete each other's operations to achieve wait-free implementations.
+
+### 7. Practical and Theoretical Significance:
+
+- Illustrates foundational knowledge essential for understanding concurrency.
+
+- Emphasizes conceptual rigor over immediate practicality, focusing on the underlying principles rather than optimized performance.
+
+
+### Summary of Core Results:
+
+- Demonstrated equivalence and implementability of all register types from simple safe Boolean registers.
+
+- Introduced practical methods (timestamps, helping) widely applicable in concurrent programming.
+
+- Highlighted the importance of understanding memory consistency and synchronization in concurrent systems.
+
+
+
+## The Art of Multiprocessor Programming; Chapter 5
+[[ch05 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
+
+**Chapter Overview:** This chapter investigates the relative power of synchronization primitives used in multiprocessor systems, specifically focusing on their ability to solve the consensus problem, an essential abstract synchronization task. It introduces and utilizes the concept of "consensus number" as a measure to determine and compare the power of different synchronization primitives and to establish a hierarchy of these primitives based on their consensus-solving capabilities.
+
+### Key Concepts and Main Ideas:
+
+### 1. Synchronization Primitives and Consensus:
+
+- The main goal is identifying synchronization operations powerful enough to solve common synchronization problems in multiprocessor systems.
+- **Consensus Problem**: A fundamental synchronization task where multiple threads must agree (decide) on a single value from their proposed inputs.
+- **Consensus Protocol**: Defined through a single method, `decide()`, ensuring:
+    - **Consistency**: All threads decide on the same value.
+    - **Validity**: The decided value must be an input from one of the threads.
+
+**Example:**
+
+- Binary consensus involves two possible input values, typically 0 or 1.
+
+### 2. Consensus Numbers:
+
+- **Consensus Number**: Defined as the largest number of threads for which a class of synchronization primitives can solve the consensus problem using wait-free protocols.
+- If a synchronization primitive can solve the consensus problem for an unlimited number of threads, it has an infinite consensus number.
+- A synchronization primitive at a lower level cannot implement (using wait-free methods) a primitive at a higher consensus number.
+
+### 3. Classification of Synchronization Primitives by Consensus Number:
+
+#### Atomic Registers:
+
+- **Consensus number = 1**
+- Atomic read/write registers alone cannot solve consensus for two or more threads.
+
+#### FIFO Queues, Stacks, Priority Queues, Lists, Sets:
+
+- **Consensus number = 2**
+- These data structures can solve consensus for exactly two threads but cannot handle consensus for three or more threads.
+
+#### Multiple-Assignment Objects:
+
+- An (m,n)-assignment object atomically assigns values to multiple memory locations simultaneously.
+- An (m,n)-assignment has a consensus number greater than atomic registers but still limited. Specifically, (2,3)-assignments have a consensus number of at least 2, while general (n, n(n+1)/2)-assignments have consensus number at least n.
+- Multiple assignment (writing multiple memory locations simultaneously) is strictly more powerful than atomic snapshots (reading multiple locations atomically).
+
+#### Read-Modify-Write (RMW) Operations:
+
+- Defined as methods that atomically read a memory location, apply a function to its value, and write back the result.
+- Any nontrivial RMW register has at least consensus number 2.
+- **Common2 class**: A subclass of RMW operations characterized by commuting or overwriting functions (e.g., `getAndSet`, `getAndIncrement`, and `getAndAdd`) have consensus number exactly 2, thus unable to achieve consensus for three or more threads.
+
+#### CompareAndSet (CAS) Operations:
+
+- **Consensus number = infinite**
+- CAS registers can solve consensus problems for an unlimited number of threads.
+- CAS operations are powerful synchronization primitives and form a "universal" synchronization operation, capable of building any wait-free concurrent object.
+
+### 4. Bivalence Arguments and Critical States:
+
+- Uses the notion of **bivalent (undecided)** and **univalent (decided)** states to prove the limitations of synchronization primitives.
+- A **critical state** is a bivalent state where the next move of any thread makes the protocol state univalent (decided).
+- These concepts are instrumental in proving impossibility results (e.g., atomic registers can't solve two-thread consensus).
+
+### 5. Practical Implications:
+
+- Hardware designers must provide synchronization primitives beyond atomic registers to build practical concurrent data structures.
+- CAS emerges as a fundamentally important primitive for modern multiprocessor systems.
+
+### Key Results and Implications:
+
+- **Atomic registers alone cannot solve two-thread or greater consensus** (consensus number 1).
+- **FIFO Queues and common data structures have limited synchronization power** (consensus number 2).
+- **CAS operations are universally powerful**, capable of constructing any concurrent object in a wait-free manner (infinite consensus number).
