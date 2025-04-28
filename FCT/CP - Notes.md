@@ -440,3 +440,15 @@ Each step is carefully explained, including proofs of correctness, leveraging me
 - **Atomic registers alone cannot solve two-thread or greater consensus** (consensus number 1).
 - **FIFO Queues and common data structures have limited synchronization power** (consensus number 2).
 - **CAS operations are universally powerful**, capable of constructing any concurrent object in a wait-free manner (infinite consensus number).
+
+
+## The Art of Multiprocessor Programming; Chapter 6
+
+Lock-free does not allow starvation
+Wait-free operation will eventually complete 
+
+If a program is lock-free, it basically means that _at least one_ of its threads is guaranteed to make progress over an arbitrary period of time. If a program deadlocks, none of its threads (and therefore the program as a whole) cannot make progress - we can say it's not lock-free. Since lock-free programs are guaranteed to make progress, they are guaranteed to complete (assuming finite execution without exceptions).
+
+Wait-free is a stronger condition which means that _every_ thread is guaranteed to make progress over an arbitrary period of time, regardless of the timing/ordering of thread execution; and so we can say that the threads finish independently. All wait-free programs are lock-free.
+
+Obstruction-freedom is the weakest natural non-blocking progress guarantee. An algorithm is obstruction-free if at any point, a single thread executed in isolation (i.e., with all obstructing threads suspended) for a bounded number of steps will complete its operation. All lock-free algorithms are obstruction-free.
