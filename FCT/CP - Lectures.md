@@ -27,3 +27,7 @@ Correctness – Sequential Objects – Quiescent and Sequential Consistency – 
 # T6 - 14/04/2025
 [[2025-04-14 T11-12 The Relative Power of Synchronization Operations.pdf]]
 [[ch05 - The Art of Multiprocessor Programming, 2nd Edition.pdf]]
+
+
+# T7 - 28/04/2025
+[[2025-04-28 T13-14 ]]
