@@ -54,9 +54,41 @@ RAID techniques improve data storage reliability and performance by distributing
 - **RAID Level 5**: Block-level striping with distributed parity, balances reliability, cost, and performance for read-intensive applications.
     
 - **RAID Level 6**: Advanced redundancy, tolerating two simultaneous disk failures, ideal for critical systems.
-    
+![[Pasted image 20250429154858.png]]
+
+**Choice of RAID Level**
+
+§ Factors in choosing RAID level
+	• Monetary cost
+	• Performance: Number of I/O operations per second, and bandwidth during normal operation
+	• Performance during failure
+	• Performance during rebuild of failed disk
+		§ Including time taken to rebuild failed disk
+		
+§ RAID 0 is used only when data safety is not important
+	• E.g. data can be recovered quickly from other sources
+	
+§ RAID 1 provides much better write performance than level 5
+	• Level 5 requires at least 2 block reads and 2 block writes to write a single block, whereas Level 1 only requires 2 block writes
+§ RAID 1 had higher storage cost than level 5
+
+§ Level 5 is preferred for applications where writes are sequential and large (many blocks), and need large amounts of data storage
+
+§ RAID 1 is preferred for applications with many random/small updates
+
+§ RAID 6 gives better data protection than RAID 5 since it can tolerate two disk (or disk block) failures
+	• Increasing in importance since latent block failures on one disk, coupled with a failure of another disk can result in data loss with RAID 1 and RAID 5.
 
 RAID configurations also support hot swapping, hardware and software implementations, and specialized recovery strategies to minimize downtime and data loss.
+
+§ Software RAID: RAID implementations done entirely in software, with no special hardware support
+§ Hardware RAID: RAID implementations with special hardware
+	• Use non-volatile RAM to record writes that are being executed
+	• Beware: power failure during write can result in corrupted disk
+		§ E.g. failure after writing one block but before writing the second in a mirrored system
+		§ Such corrupted data must be detected when power is restored
+			• Full scan of disk may be required!
+			• NV-RAM helps to efficiently detected potentially corrupted blocks
 
 **Disk-Block Access Optimization:**
 
@@ -102,13 +134,19 @@ Data is logically structured into files, which are sequences of records mapped o
     - Records fit within single blocks.
         
     - Easy insertions/deletions using a "free-list" for reusing deleted record space.
-        
+	    - There are 3 ways for deletion: 
+		    - 1 move all data points after i back one space (if I delete row 10 row 11-10, 12-11, 13-12 and so on)
+		    - Move new record on top of deleted row so that it replaces the whole row
+		    - Do not move records, but link all free records on a free list
+
+
 - **Variable-Length Records:**
-    
+![[Pasted image 20250502120612.png]]
     - Use slotted-page structure to manage variable-sized records within blocks efficiently.
-        
+    -
     - Each record contains fixed-length metadata (offset and length) and variable-length attributes separately.
-        
+
+
 - **Storing Large Objects (LOBs):**
     
     - Objects like multimedia files are stored separately due to size constraints.
