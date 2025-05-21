@@ -56,6 +56,11 @@ docker run -d --name mariadb-bench \
 docker exec -it mariadb-bench bash
 mariadb -u root -p
 
+
+SHOW VARIABLES LIKE "max_connectios";
+SHOW VARIABLES LIKE 'innodb_buffer_pool_size';
+SHOW VARIABLES LIKE 'innodb_log_buffer_size';
+
 | Test Case | `max_connections` | `buffer_pool_size` | `log_buffer_size` | `virtual_users` | `warehouses` | Test Nº |
 | --------- | ----------------- | ------------------ | ----------------- | --------------- | ------------ | ------- |
 | Small     | 151               | 1G                 | 16M               | 2               | 10           | 1       |
