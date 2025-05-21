@@ -31,3 +31,7 @@ Correctness – Sequential Objects – Quiescent and Sequential Consistency – 
 
 # T7 - 28/04/2025
 [[2025-04-28 T13-14 ]]
+
+
+# T8 - 05/05/2025
+[[2025-04-28 T13-14 ]]

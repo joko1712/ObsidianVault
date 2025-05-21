@@ -5,14 +5,19 @@
 - [x] Fill form for the group
 - [x] Finish Lab2
 - [ ] Read Chapter 2 of The Art of Multiprocessor Programming
+- [ ] Read Chapter 3 of The Art of Multiprocessor Programming
+- [ ] Read Chapter 4 of The Art of Multiprocessor Programming
+- [ ] Read Chapter 5 of The Art of Multiprocessor Programming
+- [ ] Read Chapter 6 of The Art of Multiprocessor Programming
+
 
 # SBD:
 - [x] Install Oracle Developer
 - [x] Read Chapter 12 of Database System Concepts - 7th Edition
 - [x] Try Lab1
-- [ ] Read PowerPoints 12
+- [x] Read PowerPoints 12
 - [ ] Read Chapter 12
-- [ ] Read PowerPoints 13
+- [x] Read PowerPoints 13
 - [ ] Read Chapter 13
 - [ ] Read PowerPoints 14
 - [ ] Read Chapter 14
