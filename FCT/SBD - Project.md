@@ -281,14 +281,7 @@ DATES:
 ![[Pasted image 20250519170037.png]]
 
 # PostgreDB:
-docker run -d --name postgres-bench \
-  -e POSTGRES_PASSWORD=root \
-  -e POSTGRES_DB=tpcc \
-  -p 5432:5432 \
-  postgres:16 \
-  -c max_connections=151 \
-  -c shared_buffers=1GB \
-  -c wal_buffers=16MB
+g
   
 CREATE DATABASE tpcc;
 CREATE USER tpcc WITH PASSWORD 'root';
