@@ -41,7 +41,16 @@ export DISPLAY=host.docker.internal:0.0
 
 ip of machine: host.docker.internal
 
-
+CONFIGS=(
+  "5,5,100,256M,8M"
+  "10,10,200,512M,16M"
+  "20,20,500,1G,32M"
+  "50,20,500,2G,64M"
+  "20,5,200,256M,8M"
+  "10,10,200,2G,64M"
+  "5,20,100,128M,8M"
+  "100,50,1000,4G,128M"
+)
 
 # Tests:
 # MariaDB:
