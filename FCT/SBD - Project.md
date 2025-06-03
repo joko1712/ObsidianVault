@@ -784,3 +784,7 @@ AND
 | metstop   | Usage: metstop                           |                                                                                                         |
 
 Dict config
+
+
+Add use all wearehouses
+
