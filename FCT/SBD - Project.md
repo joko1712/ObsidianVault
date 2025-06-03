@@ -763,3 +763,7 @@ DATES:
 
 
 
+
+
+Computer utilization - 
+Transitions graph is it possible to generate from hammercli - 
