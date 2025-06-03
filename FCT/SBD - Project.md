@@ -767,3 +767,20 @@ DATES:
 
 Computer utilization - 
 Transitions graph is it possible to generate from hammercli - 
+
+
+In Build schema add 
+
+|tcstart|Usage: tcstart|Starts the Transaction Counter.|
+|tcstatus|Usage: tcstatus|Checks the status of the Transaction Counter.|
+|tcstop|
+
+AND 
+
+| metset    | Usage: metset [agent_hostname\|agent_id] | Configure the CPU Metrics options. Equivalent to the Metrics Options window in the graphical interface. |
+| --------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| metstart  | Usage: metstatus                         | Checks the status of the CPU Metrics.                                                                   |
+| metstatus | Usage: metstart                          | Starts the CPU Metrics and agent if configured to the localhost.                                        |
+| metstop   | Usage: metstop                           |                                                                                                         |
+
+Dict config
