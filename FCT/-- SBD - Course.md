@@ -1,5 +1,6 @@
 [[SBD - Lectures]]
 [[SBD - Labs]]
-[[SBD - Test Preparation]]
+[[SBD - Test 1 Preparation]]
+[[SBD - Test 2 Preparation]]
 [[SBD - Notes]]
 [[SBD - Project]]
