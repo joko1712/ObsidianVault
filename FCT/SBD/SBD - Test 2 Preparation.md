@@ -843,3 +843,34 @@ exclusive or shared locks
 • shared and intention-exclusive (SIX): the subtree rooted by that
 node is locked explicitly in shared mode and explicit locking is being
 done at a lower level with exclusive-mode locks.
+
+
+Serializable usually ensures serializable execution. However, as we shall explain
+
+shortly, some database systems implement this isolation level in a manner that
+
+may, in certain cases, allow nonserializable executions.
+
+• Repeatable read allows only committed data to be read and further requires that,
+
+between two reads of a data item by a transaction, no other transaction is allowed
+
+to update it. However, the transaction may not be serializable with respect to other
+
+transactions. For instance, when it is searching for data satisfying some conditions,
+
+a transaction may find some of the data inserted by a committed transaction, but
+
+may not find other data inserted by the same transaction.
+
+• Read committed allows only committed data to be read, but does not require re-
+
+peatable reads. For instance, between two reads of a data item by the transaction,
+
+another transaction may have updated the data item and committed.
+
+• Read uncommitted allows uncommitted data to be read. It is the lowest isolation
+
+level allowed by SQL.
+
+
