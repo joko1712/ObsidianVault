@@ -875,3 +875,191 @@ level allowed by SQL.
 
 
 ![[Pasted image 20250611221135.png]]
+
+
+## **1. Serializable Read (Highest Isolation)**
+
+### **Advantages:**
+- Guarantees full isolation, eliminating anomalies such as dirty reads, non-repeatable reads, phantom reads, and write skews.
+
+### **Disadvantages:**
+- Higher likelihood of deadlocks, possibly leading to frequent transaction rollbacks.
+
+---
+## **2. Repeatable Read**
+### **Advantages:**
+- Offers a balance between isolation and concurrency, suitable for scenarios needing consistency across multiple reads.
+
+### **Disadvantages:**
+- Vulnerable to phantom reads—rows inserted by concurrent transactions may appear in subsequent identical queries.
+
+---
+
+## **3. Read Committed (Most Common Default)**
+
+### **Advantages:**
+- Good balance of concurrency and consistency, suitable for most applications.
+### **Disadvantages:**
+- Allows non-repeatable reads—data may change between reads within the same transaction.
+
+---
+
+## **4. Read Uncommitted (Lowest Isolation)**
+### **Advantages:** 
+- Lowest chance of locking conflicts and deadlocks.
+### **Disadvantages:**
+- Can lead to inconsistent data views and integrity issues if used improperly.
+
+
+---
+
+## **5. Snapshot Isolation**
+
+### **Advantages:**
+- Great for read-heavy applications requiring consistent snapshots of data (e.g., reports).
+
+### **Disadvantages:**
+- Additional overhead due to maintaining snapshots (versioning of rows).
+
+
+---
+# ✅ **Checkpointing Techniques**
+
+Checkpointing refers to periodically saving the state of a database to disk to speed up recovery.
+## **1. Normal (Consistent) Checkpointing**
+
+- Stops transaction processing briefly.
+
+**Advantages:**
+- Simplifies recovery as all data at checkpoint is consistent.
+- Recovery involves minimal redo.
+
+**Disadvantages:**
+- Transaction processing is temporarily halted, causing performance degradation.
+
+---
+
+## **2. Fuzzy (Incremental) Checkpointing**
+
+- Transactions continue executing during checkpoint.
+    
+- Writes dirty pages incrementally to disk without stopping transaction processing.
+
+**Advantages:**
+- No disruption to running transactions.
+- Improved system availability and throughput.
+
+**Disadvantages:**
+- Recovery is more complex, involving more redo/undo operations.
+
+---
+
+# 📖 **Logging Techniques**
+
+Logs store transaction details to facilitate recovery after crashes.
+
+## **1. Undo Logging (Immediate Modification Logging)**
+
+- Before modifying a database page, logs the **old** value.    
+- Writes log entry to disk **before** the corresponding data write (**Write-Ahead Logging** rule for UNDO).
+
+**Advantages:**
+- Simple recovery: just undo incomplete transactions.
+- Minimal log size since only old values are logged.
+
+**Disadvantages:**
+- Updates must wait until logs are flushed to disk.
+- Redo isn't supported efficiently.
+
+---
+
+## **2. Redo Logging (Deferred Modification Logging)**
+
+- Transactions initially write to logs the **new values** without modifying the database directly.    
+- Database updates are deferred until transaction commit.
+
+**Advantages:**
+- Fast database write (all changes batched at commit).
+- Efficient redo after crashes.
+
+**Disadvantages:**
+- Larger logs as new values are logged.
+- More complex transaction management.
+
+---
+
+## **3. Undo/Redo Logging**
+- Logs **both old and new values** before database modifications.
+- Writes logs before database updates (WAL rule).
+- Most common in real-world databases.
+
+**Advantages:**
+- Flexible recovery; can redo committed and undo uncommitted transactions.
+- Balances simplicity and efficiency.
+
+**Disadvantages:**
+- Larger log files.
+- Increased overhead for logging.
+
+---
+
+# 🔄 **Recovery Techniques**
+
+Recovery methods restore database consistency after crashes or errors.
+## **1. Undo Recovery (Immediate Update Approach)**
+- Uses undo logging.
+- Undoes all incomplete transactions at recovery.
+
+**Process:**
+- After crash, scan log backward.
+- Undo transactions that have not committed.
+
+---
+
+## **2. Redo Recovery (Deferred Update Approach)**
+- Uses redo logging.
+- Redoes only committed transactions after crash.
+
+**Process:**
+- After crash, scan log forward.
+- Redo committed transactions from logs.
+
+---
+
+## **3. Undo/Redo Recovery (ARIES Algorithm)**
+
+- Uses undo/redo logging with sophisticated checkpointing.
+- Combines undo and redo for robust recovery.
+
+**Process (ARIES):**
+- **Analysis Phase:** Determine active transactions at crash.
+- **Redo Phase:** Redo all logged actions forward from earliest incomplete transaction.
+- **Undo Phase:** Undo all incomplete transactions backward.
+
+**Advantages:**
+- Efficient and robust; widely used commercially.
+- Supports fuzzy checkpointing and fine-grained concurrency.
+
+**Disadvantages:**
+- Complex to implement and manage.
+
+---
+
+# 🚦 **Two-Phase Commit (2PC)** for Distributed Recovery
+
+In distributed databases, 2PC ensures atomicity across multiple databases/sites.
+
+**Phases:**
+### 1. **Prepare Phase:**
+- Coordinator asks participants if they can commit.
+- Participants respond: "Prepared" or "Abort".
+
+### 2. **Commit/Abort Phase:**
+- If all respond "Prepared", coordinator sends "Commit".
+- If any respond "Abort", coordinator sends "Abort".
+
+**Advantages:**
+- Ensures distributed transaction atomicity.
+
+**Disadvantages:**
+- Blocking behavior: participants can remain indefinitely blocked if coordinator crashes.
