@@ -818,3 +818,28 @@ has been aborted:
 § Can be done only if no internal logical error
 • Kill the transaction
 § Committed – after successful completion.
+
+
+two-
+phase locking is necessary for conflict
+serializability in the following sense:
+• Given a transaction Ti that does
+not follow two-phase locking, we
+can find a transaction Tj that uses
+two-phase locking, and a schedule
+for Ti and Tj that is not conflict
+serializable
+
+A schedule S is legal under a locking protocol if it can be generated
+by a set of transactions that follow the protocol
+• A protocol ensures serializability if all legal schedules under that
+protocol are serializable
+
+
+intention-shared (IS): indicates explicit locking at a lower level of the
+tree but only with shared locks.
+• intention-exclusive (IX): indicates explicit locking at a lower level with
+exclusive or shared locks
+• shared and intention-exclusive (SIX): the subtree rooted by that
+node is locked explicitly in shared mode and explicit locking is being
+done at a lower level with exclusive-mode locks.
