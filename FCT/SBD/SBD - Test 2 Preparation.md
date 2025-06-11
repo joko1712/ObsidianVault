@@ -874,3 +874,4 @@ another transaction may have updated the data item and committed.
 level allowed by SQL.
 
 
+![[Pasted image 20250611221135.png]]
