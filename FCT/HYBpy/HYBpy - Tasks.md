@@ -48,7 +48,7 @@
 - [x] If batch_number is last column cut it
 ## Writting:
 - [ ] Write Article
-- [ ] Add Comparison and Analysis
+- [x] Add Comparison and Analysis
 - [x] Sec. 3 terá que ser reescrita. Veja por favor o estilo de escrita deste tipo de secções em artigos do mesmo tipo.
 	- [x] https://pmc.ncbi.nlm.nih.gov/articles/PMC6108935/#S3 
 		    [[Tellurium.pdf]]
