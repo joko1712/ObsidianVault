@@ -452,3 +452,185 @@ If a program is lock-free, it basically means that _at least one_ of its threads
 Wait-free is a stronger condition which means that _every_ thread is guaranteed to make progress over an arbitrary period of time, regardless of the timing/ordering of thread execution; and so we can say that the threads finish independently. All wait-free programs are lock-free.
 
 Obstruction-freedom is the weakest natural non-blocking progress guarantee. An algorithm is obstruction-free if at any point, a single thread executed in isolation (i.e., with all obstructing threads suspended) for a bounded number of steps will complete its operation. All lock-free algorithms are obstruction-free.
+
+
+
+## Parallel Programming Models and Architectures
+
+### Why Parallelism and Concurrency?
+
+- Efficient resource utilization (multi-core CPUs, GPUs, distributed systems)
+    
+- Enhanced responsiveness in UI/applications
+    
+- Essential for AI, ML, blockchain, IoT, edge computing
+    
+- Improved performance and speedup
+    
+- Scalability (Cloud, Kubernetes, Apache Spark)
+    
+- Better software design (preventing race conditions, deadlocks)
+    
+
+### Flynn's Taxonomy:
+
+- SISD (Single Instruction, Single Data): e.g., single-threaded processes.
+    
+- SIMD (Single Instruction, Multiple Data): GPUs, vector processors.
+    
+- MISD (Multiple Instruction, Single Data): theoretical, rarely practical.
+    
+- MIMD (Multiple Instruction, Multiple Data): multiprocessors, multicore CPUs.
+    
+
+## Mutual Exclusion (Mutex)
+
+### Key Concepts:
+
+- **Critical Section:** Code region accessed by only one thread at a time.
+    
+- **Locks:** Provide exclusive access to critical sections.
+    
+- **Fairness:** Ensure each thread gets a fair chance at lock acquisition.
+    
+
+### Properties of Mutual Exclusion:
+
+- Safety: No two threads in critical section simultaneously.
+    
+- Liveness: Eventually, some waiting thread enters critical section.
+    
+
+### Solutions:
+
+- Peterson’s Algorithm (2 threads)
+    
+- Bakery Algorithm (n threads)
+    
+
+## Concurrent Objects
+
+### Consistency Models:
+
+- **Sequential Consistency:** Operations appear in some sequential order.
+    
+- **Quiescent Consistency:** Sequential consistency when methods don't overlap.
+    
+- **Linearizability:** Method calls appear instantaneous, strictly sequential order.
+    
+
+### Lock-based Queue Example:
+
+- Use a single lock around head/tail pointers for safe concurrent access.
+    
+
+## Shared Memory Foundations
+
+### Types of Registers:
+
+- SRSW: Single Reader, Single Writer
+    
+- MRSW: Multiple Readers, Single Writer
+    
+- MRMW: Multiple Readers, Multiple Writers
+    
+
+### Register Consistency Levels:
+
+- Safe: Correct value if no overlaps.
+    
+- Regular: Old or new value if overlaps occur.
+    
+- Atomic: Linearizable; consistent with a sequential order.
+    
+
+### Weakest Useful Register:
+
+- Safe Boolean SRSW sufficient to build stronger registers and mutual exclusion.
+    
+
+## Synchronization Power and Consensus
+
+### Wait-Free and Lock-Free:
+
+- **Wait-free:** Operations complete in finite steps (no blocking).
+    
+- **Lock-free:** At least one thread always makes progress.
+    
+
+### Consensus Problem:
+
+- **Properties:** Consistency (same decision), Validity (decision from inputs).
+    
+- No wait-free solution using just read-write registers.
+    
+
+### Universality of Consensus:
+
+- Consensus is universal: builds wait-free, linearizable, concurrent objects from consensus objects and atomic registers.
+    
+
+## Spin Locks and Contention
+
+### Spin Locks (Busy-wait):
+
+- Basic TAS (Test-And-Set) lock:
+    
+    ```
+    lock(): while(state.getAndSet(true)) {}
+    unlock(): state.set(false)
+    ```
+    
+- Issues: Contention, cache coherence traffic, sequential bottlenecks.
+    
+
+### Improvement Techniques:
+
+- Exponential back-off
+    
+- Queue locks (ticket lock, CLH lock, MCS lock)
+    
+- Hierarchical and composite locks for scalability.
+    
+
+## Locking and Lock-Free Linked Lists
+
+### Synchronization Strategies:
+
+- **Coarse-Grained:** Single lock (simple, bottleneck issues).
+    
+- **Fine-Grained:** Separate locks per node (hand-over-hand locking).
+    
+- **Optimistic:** Traverse without locks, lock to confirm operation (retry if interference).
+    
+- **Lazy:** Logical deletion (mark nodes), physical removal later.
+    
+- **Lock-Free:** No locks, use atomic primitives (Compare-And-Set).
+    
+
+## Data Races
+
+### Types of Data Races:
+
+- **Low-Level:** Concurrent accesses to shared data without synchronization.
+    
+- **High-Level:** Logical issues due to concurrency not resolved by basic locking.
+    
+
+### Happens-before Relation:
+
+- Defines event ordering to detect potential races (Lamport).
+    
+
+### Race Detection Techniques:
+
+- Happens-before detection
+    
+- Lock-set algorithms (e.g., Eraser)
+    
+
+### Handling Data Races:
+
+- Consistent locking disciplines
+    
+- Proper synchronization (locks, atomic primitives, memory barriers)
