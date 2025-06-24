@@ -457,22 +457,8 @@ Obstruction-freedom is the weakest natural non-blocking progress guarantee. An a
 
 ## Parallel Programming Models and Architectures
 
-### Why Parallelism and Concurrency?
-
-- Efficient resource utilization (multi-core CPUs, GPUs, distributed systems)
-    
-- Enhanced responsiveness in UI/applications
-    
-- Essential for AI, ML, blockchain, IoT, edge computing
-    
-- Improved performance and speedup
-    
-- Scalability (Cloud, Kubernetes, Apache Spark)
-    
-- Better software design (preventing race conditions, deadlocks)
-    
-
-### Flynn's Taxonomy:
+A deadlock **occurs when two or more tasks permanently block each other by each task having a lock on a resource that the other tasks are trying to lock**
+Starvation occurs when one or more threads in your program are blocked from gaining access to a resource and, as a result, cannot make progress. Deadlock, the ultimate form of starvation, occurs when two or more threads are waiting on a condition that cannot be satisfied.
 
 - SISD (Single Instruction, Single Data): e.g., single-threaded processes.
     
@@ -484,8 +470,6 @@ Obstruction-freedom is the weakest natural non-blocking progress guarantee. An a
     
 
 ## Mutual Exclusion (Mutex)
-
-### Key Concepts:
 
 - **Critical Section:** Code region accessed by only one thread at a time.
     
@@ -499,13 +483,6 @@ Obstruction-freedom is the weakest natural non-blocking progress guarantee. An a
 - Safety: No two threads in critical section simultaneously.
     
 - Liveness: Eventually, some waiting thread enters critical section.
-    
-
-### Solutions:
-
-- Peterson’s Algorithm (2 threads)
-    
-- Bakery Algorithm (n threads)
     
 
 ## Concurrent Objects
