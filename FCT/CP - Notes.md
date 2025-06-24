@@ -634,3 +634,79 @@ Obstruction-freedom is the weakest natural non-blocking progress guarantee. An a
 - Consistent locking disciplines
     
 - Proper synchronization (locks, atomic primitives, memory barriers)
+
+
+## Granularity in Parallel Computing
+
+- **Granularity:** Size of tasks in parallel computation.
+    
+    - **Fine-grained:** small tasks, higher overhead.
+        
+    - **Coarse-grained:** large tasks, lower overhead.
+        
+
+---
+
+## Atomic Operations (Common in concurrency questions)
+
+- **fetch_and_add:** returns current value and increments it.
+    
+- **compare_and_swap (CAS):** atomically compares a memory location with a given value and, if equal, swaps it with a new value.
+    
+- **swap/exchange:** atomically swaps two values.
+    
+- **compare_and_set:** same as CAS, often used interchangeably.
+    
+
+---
+
+## Mutex Implementations
+
+- **Safety:** ensures only one thread in critical section at a time.
+    
+- **Progress:** ensures threads eventually enter critical section.
+    
+- Possible issues:
+    
+    - **Deadlock:** threads block each other indefinitely.
+        
+    - **Livelock:** threads actively responding but making no progress.
+        
+
+---
+
+## Register Implementations (Atomicity Levels)
+
+- **Safe register:** correct only if reads/writes don't overlap.
+    
+- **Regular register:** correct if reads/writes overlap; returns old/new values.
+    
+- **Atomic register:** always consistent with sequential order (linearizable).
+    
+
+---
+
+## Consensus Problem and compare-and-set
+
+- CAS useful for consensus because it allows one thread to atomically succeed, ensuring a single winner in a race.
+    
+
+---
+
+## Non-Reentrant Locks
+
+- **Non-reentrant lock:** thread trying to reacquire the same lock it holds will **deadlock**.
+    
+
+---
+
+## Hand-over-Hand Locking
+
+- Prevents **concurrent modification of adjacent nodes**, essential for fine-grained synchronization in linked structures.
+    
+
+---
+
+## Lock-free Data Structures
+
+- Guarantee that **at least one thread always makes progress**, no matter what other threads do.
