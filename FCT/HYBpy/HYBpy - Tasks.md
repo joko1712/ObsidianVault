@@ -6,6 +6,8 @@
 - [ ] Table 2 nº of runs
 - [ ] change reviewer 1 question 5
 - [ ] Email notification
+- [ ] 2.2.1 - rewrite intro
+- [ ] 
 
 # New additions to train:
 
