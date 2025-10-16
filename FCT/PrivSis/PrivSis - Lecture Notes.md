@@ -132,49 +132,125 @@ Privacy is a **multidisciplinary concept** encompassing law, philosophy, and com
 
 #### a. Key Definitions
 
-- **Personal Data:** Any data identifying a natural person directly or indirectly.
+- **Personal Data:** Any data identifying a natural person directly or indirectly. Directly or indirectly identifiable through an identifier or combination of data points held
     
 - **Data Controller:** Decides how and why personal data is processed.
     
 - **Data Processor:** Processes data on behalf of a controller.
-    
+	
+- Third Party: Other person/entity that under direct authority of the controller or processor, are authorised to process personal data.
+	
 - **Consent:** Must be freely given, informed, specific, and easy to withdraw.
     
 
 #### b. The Seven Principles
 
-1. **Lawfulness, Fairness, Transparency**
-    
-2. **Purpose Limitation** – Data used only for stated purposes.
-    
-3. **Data Minimization** – Collect only what’s necessary.
-    
-4. **Accuracy** – Keep data up to date.
-    
-5. **Storage Limitation** – Don’t retain data longer than needed.
-    
-6. **Integrity & Confidentiality** – Protect data against unauthorized access.
-    
-7. **Accountability** – Be able to demonstrate compliance.
+ 1. Lawfulness, Fairness, and Transparency:
+	1. Processing the data can only occur if:
+		Data Subject fully understands and consents
+		To fulfill a contract with the data subject
+		To fulfill a legal obligation
+		For safety reasons
+		For a public task in the public interest
+		When the data owner or processor has an interest that:
+			Is legitimate, and
+			Cannot be overriden by rights of the data subject, and
+			Is not objected to by the data subject, or the objection can be argued against
+	
+2. Purpose Limitation:
+	1. Data must be collected and processed only for the stated purposes.
+	2. To process data for other reasons, authorization is needed.
+	
+3. Data Minimization:
+	1. Only process the minimum data needed to meet the purposes
+	
+4. Accuracy:
+	1. The quality and accuracy of the data that is processed must be guaranteed.
+	2. If the data is not accurate, the data subject has the right to update the data.
+	
+5. Storage Limitations:
+	1. Data cannot be held for longer than is required.
+	2. Indefinite storage is allowed in the case of:
+		Archiving for the public interest
+		Scientific or historical research purposes
+		Statistical purposes
+	
+6. Integrity and Confidentiality:
+	1. The secure processing of data, i.e. protecting the data from data breaches or malicious edits
+	
+7. Accountability:
+	1. Data Controllers and Data Processors must be able to demonstrate compliance
+	2. If there is an unauthorized disclosure, it must be reported and there need to have been reasonable safeguards against it.
     
 
 #### c. The Eight Rights
 
-1. **Be Informed** – Clear information about processing.
+1. Be informed:
+	– Clear, succinct, and easily understandable about how data is processed
+	
+	– Name and contact of organization, representative, data protection officer
+	
+	– Purposes of collection and processing
+	
+	– Legitimate interests for processing
+	
+	– Retention periods
     
-2. **Access** – Request and obtain personal data.
+2. Rectification
+	– Correct incorrect data
+	
+	– Complete incomplete data
+	
+	– Can be done verbally or in writing
+	
+	– Requires a response in one month.
     
-3. **Rectification** – Correct inaccurate data.
+3. Access
+	– Right to request access to their own data
+	
+	– Companies have one month to respond
+	
+	– No fee can be charged
+	
+	– Businesses must verify the identity of the requester
     
-4. **Erasure** (“Right to be Forgotten”).
+4. Erasure
+	– Right to request data be erased
+	
+	– Companies have one month to respond
+	
+	– Not absolute – if a legal reason is requiring the data to be held, it cannot be deleted.
+	
+	– Marking for deletion is OK as long as it is deleted in a reasonable amount of time.
     
-5. **Restrict Processing** – Temporarily limit use.
+5. Restrict Processing of your data
+	– Ask for the restriction or suppression of personal data.
+	
+	– Companies can store data, but cannot process it in any other way.
+	
+	– Not absolute.
+	
+	– Companies have one month to respond.
     
-6. **Data Portability** – Transfer data between services.
+6. Data Portability
+	– Copy, transfer or move personal data from one online environment to another, safely and securely
     
-7. **Object** – Stop certain processing (e.g., marketing).
+7. Object 
+	– Right to object to their data being used for marketing reasons
+	
+	– Right to object to use of data for other purposes
+		If the company has a compelling reason to continue, it may.
     
-8. **Automated Decision-Making & Profiling** – Right to human review.
+8. Automated Profiling and Decision Making
+	– If the processor is:
+		acting solely on automated decision-making, and
+		This decision-making has a significant effect on the individual
+	
+	– If so, the processor must:
+		Tell the subject about the processing
+		Have and communicate easy ways to challenge automated decisions
+		Ask for humans to verify the decision
+		Check the system regularly and often
     
 
 **Technical Implications:**
