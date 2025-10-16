@@ -58,14 +58,14 @@ Privacy is a **multidisciplinary concept** encompassing law, philosophy, and com
         
     2. **Information Processing:** Aggregation, identification, insecurity, secondary use, exclusion.
         
-    3. **Information Dissemination:** Breach of confidentiality, exposure, blackmail, distortion.
+    3. **Information Dissemination:** Breach of confidentiality, disclosure, exposure, increased accessibility, blackmail, appropriation, distortion.
         
     4. **Invasion:** Intrusion, decisional interference.
         
 
 **Pros:**
 
-- Rich framework of concrete harms.
+- Rich framework of concrete harms. More complex then previous but still somewhat simple to apply
     
 - Captures legal and social dimensions.
     
@@ -75,7 +75,8 @@ Privacy is a **multidisciplinary concept** encompassing law, philosophy, and com
 - Doesn’t strictly define privacy.
     
 - Some harms depend on outcomes (e.g., disclosure).
-    
+- Some harms are overly restrictive in their definition (e.g., decisional interference)
+
 
 #### d. Privacy as Contextual Integrity (Nissenbaum)
 
