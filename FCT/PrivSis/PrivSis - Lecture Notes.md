@@ -296,18 +296,18 @@ Web tracking collects behavioral data through browsers, apps, and devices. Under
 
 ### 2. Common Tracking Methods
 
-|Method|Description|Mitigation|
-|---|---|---|
-|**IP Tracking**|Tracks via IP address (unique but shared).|Use VPNs or rotating IPs.|
-|**Authentication Tracking**|Logged-in sessions identify behavior.|Separate accounts, limit login persistence.|
-|**URL Parameters**|Track via query strings.|Remove parameters, use extensions.|
-|**Cookies**|Store session and tracking data.|Disable 3rd-party cookies, use privacy browsers.|
-|**Web Beacons**|Invisible pixels detect opens/views.|Block images, use secure email clients.|
-|**Etag Tracking**|Uses browser cache identifiers.|Clear cache, private browsing.|
-|**Browser Fingerprinting**|Derives identity from system configuration.|Use Tor/Brave, disable JS.|
-|**Favicon Fingerprinting**|Uses cached favicons for tracking.|Disable favicon caching.|
-|**JavaScript Tracking**|Monitors interactions and keys.|Block trackers via extensions.|
-|**Location Tracking**|GPS, WiFi, or cell tower triangulation.|Disable location access.|
+| Method                      | Description                                 | Mitigation                                       |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------ |
+| **IP Tracking**             | Tracks via IP address (unique but shared).  | Use VPNs or rotating IPs.                        |
+| **Authentication Tracking** | Logged-in sessions identify behavior.       | Separate accounts, limit login persistence.      |
+| **URL Parameters**          | Track via query strings.                    | Remove parameters, use extensions.               |
+| **Cookies**                 | Store session and tracking data.            | Disable 3rd-party cookies, use privacy browsers. |
+| **Web Beacons**             | Invisible pixels detect opens/views.        | Block images, use secure email clients.          |
+| **Etag Tracking**           | Uses browser cache identifiers.             | Clear cache, private browsing.                   |
+| **Browser Fingerprinting**  | Derives identity from system configuration. | Use Tor/Brave, disable JS.                       |
+| **Favicon Fingerprinting**  | Uses cached favicons for tracking.          | Disable favicon caching.                         |
+| **JavaScript Tracking**     | Monitors interactions and keys.             | Block trackers via extensions.                   |
+| **Location Tracking**       | GPS, WiFi, or cell tower triangulation.     | Disable location access.                         |
 
 ### 3. Data Brokers
 
