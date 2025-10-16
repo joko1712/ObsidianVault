@@ -394,3 +394,94 @@ Web tracking collects behavioral data through browsers, apps, and devices. Under
 - EU GDPR (2016)
     
 - _Programming Differential Privacy_ (Ch. 5–7)
+
+
+
+# EXAMPLE TEST 1 :
+
+1. (2.00 points) Describe Privacy as Autonomy over Data in your own words.
+
+	1. The data is considered private if the data subject considers the data private. The data cannot be used if the subject does not allow.
+
+2. (3.00 points) Name two principles of the GDPR and describe them in your own words.
+	1. Lawfulness, Fairness, and Transparency:
+		1. Processing the data can only occur if:
+			Data Subject fully understands and consents
+			To fulfill a contract with the data subject
+			To fulfill a legal obligation
+			For safety reasons
+			For a public task in the public interest
+			When the data owner or processor has an interest that:
+				Is legitimate, and
+				Cannot be overriden by rights of the data subject, and
+				Is not objected to by the data subject, or the objection can be argued against
+	2. Purpose Limitation:
+		1. Data must be collected and processed only for the stated purposes.
+		2. To process data for other reasons, authorization is needed.
+	3. Data Minimization:
+		1. Only process the minimum data needed to meet the purposes
+	4. Accuracy:
+		1. The quality and accuracy of the data that is processed must be guaranteed.
+		2. If the data is not accurate, the data subject has the right to update the data.
+	5. Storage Limitations:
+		1. Data cannot be held for longer than is required.
+		2. Indefinite storage is allowed in the case of:
+			Archiving for the public interest
+			Scientific or historical research purposes
+			Statistical purposes
+	6. Integrity and Confidentiality:
+		1. The secure processing of data, i.e. protecting the data from data breaches or malicious edits
+	7. Accountability:
+		1. Data Controllers and Data Processors must be able to demonstrate compliance
+		2. If there is an unauthorized disclosure, it must be reported and there need to have been reasonable safeguards against it.
+
+3. In this class we learned about k-anonymity, a method to protect data from re-identification attacks. In your own words, please define the following terms related to k-anonymity:
+	1. (0.50 points) Suppression:
+		1. Removing identifying or quasi-identifying values from a dataset to prevent re-identification.
+	2. (0.50 points) Add-remove adjacency
+		1. Two datasets are **add-remove adjacent** (neighbors) they differ by **exactly one record** (one person’s data added or removed).
+	3. (0.50 points) Add-remove adjacency
+		1. A dataset satisfies **k-anonymity** if **each unique combination of quasi-identifiers appears in at least _k_ records.**  This ensures that each individual is **indistinguishable among at least (k–1) others.**
+			**Goal:** Prevent re-identification using linkage attacks.  
+			**Limitations:** Vulnerable to _homogeneity_ and _background knowledge_ attacks.
+
+4. (5.00 points) Consider the following data:
+
+	ID Date Amount Currency Merchant Category Risk Level
+	
+	1 15/1/2020 9446,82 AZN Food - Frozen Foods 3
+	
+	2 11/3/2024 2672,26 PLN Home Improvement 1
+	
+	3 20/12/2020 2574,14 EUR Electronics 2
+	
+	4 17/9/2020 4065,55 THB Food - Canned Goods 4
+	
+	5 19/2/2019 1125,05 EUR Clothing - Tops 5
+	
+	6 19/3/2020 343,57 PLN Accessories 1
+	
+	7 5/4/2025 1534,57 EUR Food - Frozen Foods 5
+	
+	Consider the final attribute to be the sensitive value, the ID to be purely operational (and therefore does not need to be modified) and the rest to be the QID. 2-anonymize the data. Justify any categorical substitutions you may have made, and discuss the utility of the resulting data.
+
+5. (3.00 points) Consider a dataset containing the following attributes collected from different regions of Portugal:
+
+	Age, postal code, height (in cm), marital status, and education level. 
+	
+	Suppose that we wish to perform a query that calculates the average height a person may have, but we want it to be a 0.3-differentially private mechanism using the Laplace method. What is the noise that you need to inject into the query response? 
+	
+	I am expecting the answer as a formula, but with the parameters defined. Therefore, you must calculate the value of the sensitivity, which may or may not require clipping. If it does, you may be required to make a judgement call about a reasonable cut-off for a field’s bounds. Please justify any of these judgement calls.
+
+
+	**5. Differential Privacy – Laplace Noise (3 pts)** \n\nWe want a **0.3-DP mechanism** for average height.\n\n#### **Step 1: Define query** \n\( f(x) = \text{AVG(Height)} \)\n\n#### **Step 2: Sensitivity (Δf)** \nFor averages: \n\( \Delta f = \frac{\text{max height} - \text{min height}}{n} \)\n\nAssume reasonable human height bounds:\n- min = 50 cm\n- max = 250 cm\n\n\( \Delta f = (250 - 50) / n = 200/n \)\n\n#### **Step 3: Laplace Mechanism**\nNoise added: \n\[\n\text{Noise} \sim Laplace(0, b) \quad \text{where} \quad b = \frac{\Delta f}{\epsilon}\n\]\n\nSo:\n\[\n\boxed{Noise \sim Laplace(0, 200 / (n \times 0.3))}\n\]\n\nIf dataset size n = 100 → \n\( b = 200 / 30 = 6.67 \)\n\n#### **Interpretation:** \nAdd Laplace noise with scale 6.67 cm to the query response.\n\n> Justification: Using clipping ensures sensitivity is bounded by plausible human limits.\n\n---\n\n###
+
+6. (2.00 points) Describe how web beacon tracking works in your own words.
+		Web beacons (a.k.a. pixel tags) are **tiny invisible images** (often 1×1 px) embedded in web pages or emails. When loaded, they **send a request to the server**, revealing:
+		 IP address, Time of opening, Device and user agent
+		Possibly referrer information used for **email open tracking** and **ad analytics**.
+		**Mitigation:** Block images by default or use privacy extensions that block trackers.
+
+7. (2.00 points) Can a dataset be differentially private? If so, how? If not, why not?
+		A dataset can only be called “differentially private” if it was **produced by** a DP algorithm—meaning randomness was introduced during data collection or query output.
+		**Summary:** DP protects _outputs_, not static datasets.
