@@ -4,10 +4,10 @@
 - [ ] Alter new intro for:
       biochemical industry. I suggest discussing the impact of hybrid models and reporting examples from other application cases, such as pharmaceutical cases, environmental applications, and petrochemical cases.
 - [x] Add step by step guide on 3.1
-- [ ] Batch data visualization panel
-- [ ] Table 2 nº of runs
-- [ ] change reviewer 1 question 5
-- [ ] Email notification
+- [x] Batch data visualization panel
+- [x] Table 2 nº of runs
+- [x] change reviewer 1 question 5
+- [x] Email notification
 - [ ] 2.2.1 - rewrite intro
 - [ ] 
 
