@@ -435,7 +435,7 @@ Is meant to be used with k-anonymity.
 #### b. Laplace Mechanism
 
 - Add noise during **query output** based on **global sensitivity** (maximum change in output from one record difference).
-    
+    ![[Pasted image 20251017110053.png]]
 
 ### 4. Sensitivity
 
