@@ -543,7 +543,7 @@ Is meant to be used with k-anonymity.
 		1. Removing identifying or quasi-identifying values from a dataset to prevent re-identification.
 	2. (0.50 points) Add-remove adjacency
 		1. Two datasets are **add-remove adjacent** (neighbors) they differ by **exactly one record** (one person’s data added or removed).
-	3. (0.50 points) Add-remove adjacency
+	3. (2.00 points) k-anonymity
 		1. A dataset satisfies **k-anonymity** if **each unique combination of quasi-identifiers appears in at least _k_ records.**  This ensures that each individual is **indistinguishable among at least (k–1) others.**
 			**Goal:** Prevent re-identification using linkage attacks.  
 			**Limitations:** Vulnerable to _homogeneity_ and _background knowledge_ attacks.
