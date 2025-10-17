@@ -339,12 +339,30 @@ Web tracking collects behavioral data through browsers, apps, and devices. Under
     
 
 ### 2. K-Anonymity
+Removes identifiers
+Ensure that no quasi-identifier appears less than k times
 
 - Ensures each record is indistinguishable from at least _k–1_ others based on quasi-identifiers.
     
-- **Techniques:** Suppression, Generalization, Top/Bottom coding.
+- **Techniques:** 
+	- Suppression
+		– Removing information or parts of information.
+
+	 -  Generalization
+		– Placing values into bins and only showing the bins
+
+	- Top and Bottom Coding
+		– Setting all extreme outliers to a maximum or minimum number
     
-- **Algorithm Example:** _Mondrian algorithm_ recursively partitions data to meet k-anonymity.
+- **Algorithm Example:** _Mondrian algorithm_ recursively partitions data to meet k-anonymity:
+	  We anonymize by using the suppression or generalization
+		– Suppression is easy
+		– Generalization for quantitative values are easy
+			-Range
+			-Mean
+			-Median
+		– Generalization for qualitative values is harder 
+			- requires a programmer-defined generalization hierarchy.
     
 
 **Limitations:**
@@ -355,13 +373,21 @@ Web tracking collects behavioral data through browsers, apps, and devices. Under
     
 
 ### 3. L-Diversity
+Attempts to avoid homogeneity and background knowledge attacks.
+Is meant to be used with k-anonymity.
 
 - Requires each group of quasi-identifiers to contain at least _l_ distinct sensitive values.
     
-- Mitigates homogeneity and background knowledge problems.
-    
-- **Attacks:** Skewness and similarity attacks still possible.
-    
+- Further loss of utility
+	Privacy issues still exist
+		– Attribute Disclosure: Knowing an identity, gain info about an attribute
+		– Identity Disclosure: Link an individual to their row in the DB
+- Skewness attack
+		– Leads to attribute disclosure
+		– Skews in the data itself can reveal information, even in l-diverse tables
+- Similarity attack
+		– Leads to attribute disclosure
+		– Similar but distinct sensitive values can lead to privacy leakage, even with l-diversity.
 
 ### 4. T-Closeness
 
