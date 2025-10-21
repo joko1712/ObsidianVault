@@ -100,7 +100,7 @@ study (Compeau Chapter 2 • Rocha Chapter 11 • Greedy Search is called Expect
 ## Exercises and Programming Projects Exercises (ROCHA)
 Chapter 6
 1. 
-	1. a. Consider the application of the Smith-Waterman algorithm to the sequences: S1: ANDDR; S2: AARRD. The alignment parameters should be the BLOSUM62 sub- stitution matrix and the value of g = −8. Calculate (by hand); (i) the S matrix with the best scores; (ii) the trace-back matrix; (iii) the optimal alignment and its score. Check if there are any alternative optimal alignments. 
+	1. a. Consider the application of the Smith-Waterman algorithm to the sequences: S1: ANDDR; S2: AARRD. The alignment parameters should be the BLOSUM62 substitution matrix and the value of g = −8. Calculate (by hand); (i) the S matrix with the best scores; (ii) the trace-back matrix; (iii) the optimal alignment and its score. Check if there are any alternative optimal alignments. 
 	2. b. Write a program in Python, using the functions defined in this chapter, that allows to confirm the results you obtained in the previous exercise. 
 2. 
 	1. a. Consider the application of the Needleman-Wunsch algorithm to the following DNA sequences: S1: TACT; S2: ACTA. The used parameters are the following: gap penalty (g): −3, match (equal characters): 3, mismatch: −1. Calculate (by hand); (i) the S matrix with the best scores; (ii) the trace-back matrix; (iii) the optimal align- ment and its score. Check if there are any alternative optimal alignments. 
