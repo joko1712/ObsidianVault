@@ -1,15 +1,63 @@
 
 
 # REVIEW CHECKS:
-- [ ] Alter new intro for:
+- [x] Alter new intro for:
       biochemical industry. I suggest discussing the impact of hybrid models and reporting examples from other application cases, such as pharmaceutical cases, environmental applications, and petrochemical cases.
 - [x] Add step by step guide on 3.1
 - [x] Batch data visualization panel
 - [x] Table 2 nº of runs
 - [x] change reviewer 1 question 5
 - [x] Email notification
-- [ ] 2.2.1 - rewrite intro
-- [ ] 
+- [x] 2.2.1 - rewrite intro
+
+# Professor Rui
+
+**A - New Hybrid Model**
+A.1) Corrigir "New Hybrid Model" para "New Hybrid Modelling Project"
+A.2) Load CSV, o requisito de "sd" ter que ser lowercase não faz sentido. Poderia até assumir-se que as colunas do sd podem ter um nome qualquer...
+A.3) Add ML block to Hmod:  Deve permitir incluir como input à rede "Time" e qualquer variável na lista de parâmetros do hmod. De outra forma, a aplicação prática é reduzida
+A.4) Edit HMOD settings:é preciso avaliar porque é que o levenberg-marquardt não funciona; esse seria o método mais apropriado e inclusivé mais rápido para os modelos híbridos shallow
+A.5) Manual hold-out cross validation: deve ser possivel não escolher nada para validação nem para teste se o utilizador assim o desejar. O utilizador pode querer avaliar se o  treino converge e é estável sem o early stopping da validação. Ou seja, basta escolher um batch de treino para se poder iniciar o treino. Eu queria fazer isto para o modelo CHO que era suposto mostra em Espanha  e que não consegui. O modelo nunca funcionou. Quando um modelo não funciona o primeiro teste a fazer é deixar treinar durante muito tempo com apenas 1 batch para ver se esse batch é perfeitamente descrito.
+
+**B - Hybrid Model Details**
+B.0) Deveria ser possivel escolher um qualquer projeto concluído do historical e navegar nos respetivos resultados. 
+B.1) "Show paraty plots" está trocado com "Show error plots". "Show paraty plots" deve ser corrigido para "Show **parity** plots" e "Show error plots" deve ser corrigido para "Show time series plots".
+B.2)  Nos parity plots, os pontos de treino e validação devem ser distinguidos; a diagonal não precisa de legenda e deve ser a cheio; incluir duas linhas tracejadas com +5% diagonal e -5% diagonal; no título, "Predicted vs Observed" é redundante. Melhor destacar o nome da espécie e dos títulos dos eixos. 
+B.3)  Os parity plots deveriam ser com a espécie normalizada da mesma forma que se usou no treino
+B.4) Seria bom incluir um parity plot adicional com todas as espécies juntas normalizadas
+B.5) Nos time series plots, deve ser possivel selecionar um qualquer batch; trocar "Value" pelo nome da espécie e eliminar o título do plot; Na legenda eliminar "data" Show details of completed run
+B.6) Falta o "Close"  button
+B.7) Corrigir "r2_train" para R^2 train; incluir Q^2 valid; corrigir r2_test para Q^2 test  (no futuro, estas métricas poderiam ser avaliadas individualmente por espécie e ser incluídas no parity plot ou então fazer aqui uma tabela)
+B.8) Corrigir "mse" para "WMSE" e incluir WMSE valid
+B.9) Incluir uma linha com o número de parâmetros optimizados na rede
+B.10) Incluir uma linha com o CPU (não sei se isto faz sentido com processos na cloud)
+B.11) Adicionar espaços entre os nomes das variáveis de entrada e saída da rede
+
+**C - Historical**
+C.1) Incluir projetos iniciados mas ainda não concluídos; Adicionar "Completed: XX%" logo a seguir a "StartdAt:xxxx"; Subsituir "FinishedAt: xxx" por "Duration: XXXX"; no caso de o processo não está terminado, a duration é a prevista
+C.2) Permitir o delete de projetos iniciados e ainda não terminados
+C.3) Talvez limitar o número máximo de projetos e não deixar criar um projeto novo sem apagar um antigo sempre que o número máximo de projetos é atingido
+
+**D - Simulation** 
+D.0) "Simulation" deve ser a seguir a "Hybrid Model Details"
+D.1)  Não pode ser um novo projeto no historical; a ideia é simular apenas um batch selecionado e mostrar logo os resultados na janela
+D.2)  Corrigir "Select a Previous Run" para "Select project" 
+D.3)  Load CSV deve ser opcional; se não fizer load CSV usa o CSV do projecto utilizado para o treino
+D.4) Seleccionar um (e apenas um) qualquer batch do CSV
+D.5) Mostrar os time series plots dos compartments, species nos compartments, kinetic rates, control inputs, parameters ( a ideia é poder navegar na simulação do batch em grande detalhe)
+
+**E - Train (nova opção do menu bar que deve aparecer a seguir a "Hybrid model details")**
+E.1) Permitir selecionar um qualquer historical project completed
+E.2) Não permitir mudar o nome do projeto.
+E.3) STEP 1. Permitir editar apenas a janela "Edit HMOD Settings" 
+E.4) STEP 2. Permitir "Select data split"
+E.5) STEP 3. "New random parameters" OR "Parameters from previous training"
+E.6) Quando se clica no start training;  os resultados escrevem por cima dos resultados anteriores, ou seja, retreinar o projeto 10 implica apagar o projeto 10 anterior e mudar o historical para "Completed:0%"
+
+**F - Optimisation (nova opção do menu bar que deve aparecer a seguir a "Simulation")**
+Não é prioritário agora;
+
+
 
 # New additions to train:
 
